@@ -1,0 +1,51 @@
+﻿:root {
+    --color: #444444;
+    --green: #4cd964;
+}
+*{ 
+    margin:0;
+    padding:0;
+    
+}
+form{
+    padding:0;
+}
+nav, footer{
+    background-color: var(--color);
+    width:100vw;
+
+}
+nav {
+    min-height: 100px;
+    position: sticky;
+}
+nav div {
+    height: 100px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+nav div * {
+    height:40px;
+    padding:10px;
+    border-radius:10px;
+    border-width:0;
+}
+.green{
+    background-color:var(--green)
+}
+img{
+    width:100vw;
+}
+.center{
+    
+}
+.img{
+    min-height:200px;
+    min-width:200px;
+    height:40vh;
+    width:40vw;
+}
+main .row{
+    margin-top:25px;
+}
