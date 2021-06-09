@@ -5,16 +5,16 @@
     
     <main>
         <section class="row mainPic">
-            <img src="\Pictures\CampingPladsForside.jpg" alt="Alternate Text" class="col-12"/>
+            <img src="\Pictures\CampingPladsForside.jpg" alt="Alternate Text" class="col-12 "/>
         </section>
         <section class="row">
             <h1 class="col-sm-12">Om ZAP Beach Camping</h1>
             
-            <div class="col-md-6 img">
+            <div class="col-md-6 img ">
                 <p>Yhellow</p>
             </div>
             <div class="col-md-6 img">
-                <img src="\Pictures\CampingPladsForside.jpg" alt="Alternate Text" class="imgg" />
+                <img src="\Pictures\CampingPladsForside.jpg" alt="Alternate Text" class="imgg landscape" />
             </div>
             
         </section>
