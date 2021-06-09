@@ -11,7 +11,19 @@ namespace ZAP_BEACH_CAMPING
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
+        }
+        protected void redirectHome(object sender, EventArgs e)
+        {
+            Response.Redirect("/");
+        }
+        protected void redirectAbout(object sender, EventArgs e)
+        {
+            Response.Redirect("/About.aspx");
+        }
+        protected void redirectOrder(object sender, EventArgs e)
+        {
+            Response.Redirect("/");
         }
     }
 }
