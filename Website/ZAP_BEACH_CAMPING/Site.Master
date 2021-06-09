@@ -8,11 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link href="Styles.css" rel="stylesheet" />
-    
-
-    
-    
-
 </head>
 <body class="container-fluid">
     <form runat="server" >
@@ -20,19 +15,19 @@
 
         <nav class="row">
             <div class="col-sm-4">
-                <asp:Button Text="ZAP Beach Camping" runat="server" class="" />
+                <asp:Button Text="ZAP Beach Camping" runat="server" class="navButton" onclick="redirectHome"/>
             </div>
             <div class="col-sm-4">
-                <asp:Button Text="Om os" runat="server" />
+                <asp:Button Text="Om os" runat="server" class="navButton" onclick="redirectAbout"/>
             </div>
             <div class="col-sm-4">
-                <asp:Button Text="Bestil Plads" runat="server" class="green"/>
+                <asp:Button Text="Bestil Plads" runat="server" class="green navButton" onclick="redirectOrder"/>
             </div>
             
         </nav>
 
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
         <footer class="row">
             <p>Email: xxxx@xx.xx</p>
             <p>Telefon: +45 xxxx xxxx</p>
