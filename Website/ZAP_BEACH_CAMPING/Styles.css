@@ -16,38 +16,42 @@ form{
 }
 nav, footer{
     background-color: var(--color);
-    width:100vw;
-    position:absolute;
 }
 nav {
     min-height: 10vh;
     position: sticky;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 nav div {
-    
     display:flex;
     justify-content:center;
     align-items:center;
+    
 }
 nav div .navButton {
     height:5vh;
+    min-width:10vw;
     padding:10px;
-    border-radius:10px;
+    border-radius:0.5vh;
     border-width:0;
 }
 nav div .navButton:hover {
     filter: brightness(60%);
 }
-.mainPic {
-    height: 70vh;
-    width: 100%;
-    overflow: hidden;
-}
 .green{
     background-color:var(--green)
 }
-img{
-    
+.mainPic {
+    height: 70vh;
+    width: 100%;
+    overflow: hidden; 
+}
+.mainPic * {
+    object-fit:cover;
+    min-width: 100%;       
+    min-height:100%;
 }
 .landscape{
     height:100%
@@ -56,13 +60,6 @@ img{
     width:100%;
 }
 .center{
-    
-}
-.img{
-    min-height:200px;
-    
-    height:40vh;
-    width:40vw;
     
 }
 main{
@@ -77,28 +74,40 @@ section{
     
     
 }
-section div {
-    border-style: solid;
-    border-width: 2px;
-    border-color: black;
-    padding: 0 !important;
+section > * {
+    
+    
+   
+}
+section > div {
+    max-height: 400px;
+    width: 500px;
     overflow: hidden;
+    margin:20px;
+}
+section > .picture{
+    box-shadow:0px 0px 200px -50px #000000;
+}
+section > .picture > img {
     height:100%;
+    width:100%;
 }
-aside{
-    width:50vw;
-}
-.portraitSection{
-    height:90vh;
-    max-height:90vh;
-}
-.portraitSection img{
-    max-height:90%;
-}
-.portraitSection *{
-    min-height:
-}
-.ayy{
-    max-height:90%;
+aside > *{
+    margin:auto;
+    max-width:80%;
 }
 
+
+.button {
+    height: 40px;
+    width: 100px;
+    border-radius: 0.5vh;
+    border-width: 0;
+
+}
+.left{
+    float:left;
+}
+.right{
+    float:right;
+}

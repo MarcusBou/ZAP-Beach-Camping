@@ -29,9 +29,11 @@
         <asp:ContentPlaceHolder ID="MainContent" runat="server">
         </asp:ContentPlaceHolder>
         <footer class="row">
+            <div class="col-sm-12">
             <p>Email: xxxx@xx.xx</p>
             <p>Telefon: +45 xxxx xxxx</p>
             <p>Adresse: xxxxxxx</p>
+            </div>
         </footer>
 
 
