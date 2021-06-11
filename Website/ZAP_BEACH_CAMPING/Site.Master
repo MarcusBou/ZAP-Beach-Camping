@@ -6,6 +6,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZAP Beach Camping</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link href="Styles.css" rel="stylesheet" />
 </head>
@@ -15,13 +16,15 @@
 
         <nav class="row">
             <div class="col-sm-4">
-                <asp:Button Text="ZAP Beach Camping" runat="server" class="navButton" onclick="redirectHome"/>
+                <a href="/Default.aspx" class="hover">
+                    <img src="/Pictures/logo.png" alt="" class="hover"/>
+                </a>
             </div>
             <div class="col-sm-4">
-                <asp:Button Text="Om os" runat="server" class="navButton" onclick="redirectAbout"/>
+                <asp:Button Text="Om os" runat="server" class="navButton hover" onclick="redirectAbout"/>
             </div>
             <div class="col-sm-4">
-                <asp:Button Text="Bestil Plads" runat="server" class="green navButton" onclick="redirectOrder"/>
+                <asp:Button Text="Bestil Plads" runat="server" class="green navButton hover" onclick="redirectOrder"/>
             </div>
             
         </nav>
@@ -29,11 +32,28 @@
         <asp:ContentPlaceHolder ID="MainContent" runat="server">
         </asp:ContentPlaceHolder>
         <footer class="row">
-            <div class="col-sm-12">
-            <p>Email: xxxx@xx.xx</p>
-            <p>Telefon: +45 xxxx xxxx</p>
-            <p>Adresse: xxxxxxx</p>
+            <div class="col-md-5 col-12">
+                <img src="/Pictures/Logo.png" alt="" />
             </div>
+            <div class="col-md-5 col-12 ">
+                <div>
+                    <p>
+                        <a href="mailto:Info@ZAPBeachCamping.dk"><span class="white">Email: </span>Info@ZAPBeachCamping.dk</a>
+
+                    </p>
+                    <p>
+                        <a href="tel:+4520280287"><span class="white">Telefon: </span>20820287</a>
+
+                    </p>
+                    <p>
+                        <a href="https://maps.google.com/?q=Ahorne Alle ringsted" target="_blank"><span class="white">Adresse: </span>xxxxxxx</a>
+                    </p>
+                    <p>
+                        CVR: 38424756
+                    </p>
+                 </div>
+            </div>
+            
         </footer>
 
 
