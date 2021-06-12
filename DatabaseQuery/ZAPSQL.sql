@@ -10,6 +10,7 @@ DROP TABLE IF EXISTS Spot;
 DROP TABLE IF EXISTS Prices;
 DROP TABLE IF EXISTS Attributes;
 
+--Tables
 CREATE TABLE Customer (
 	customerID INT IDENTITY(1,1) PRIMARY KEY,
 	firstName VARCHAR(255),
@@ -18,7 +19,6 @@ CREATE TABLE Customer (
 	phonenumb VARCHAR(12),
 	adress VARCHAR(255)
 );
-
 
 CREATE TABLE Booking(
 	bookingID INT IDENTITY(1,1) PRIMARY KEY,
@@ -47,6 +47,7 @@ CREATE TABLE Attributes(
 	price FLOAT
 );
 
+--Table's with foreign keys
 CREATE TABLE BookingsLinked(
 	customerID INT,
 	bookingID INT,
