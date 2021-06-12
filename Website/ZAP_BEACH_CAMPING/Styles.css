@@ -1,14 +1,25 @@
 ﻿:root {
     --color: #444444;
-    --green: #4cd964;
+    --green: #32CD32;
+}
+.green {
+    background-color: var(--green)
+}
+.white {
+    color: white;
+}
+.hover:hover {
+    filter: brightness(60%);
 }
 *{ 
     margin:0;
     padding:0;
     
 }
-body, html{
-    width:100vw;
+body, html {
+    width: 100%;
+    height:100%;
+    overflow-x: hidden;
 }
 form{
     width:100vw;
@@ -18,7 +29,8 @@ nav, footer{
     background-color: var(--color);
 }
 nav {
-    min-height: 10vh;
+    min-height:75px;
+    height: 10vh;
     position: sticky;
     display: flex;
     justify-content: center;
@@ -28,7 +40,19 @@ nav div {
     display:flex;
     justify-content:center;
     align-items:center;
+    height:10vh;
+    max-width:333px;
     
+}
+nav > div > *{
+    max-height:10vh !important;
+    max-width:200px !important;
+    
+}
+nav div a img{
+    object-fit:contain;
+    width:100%;
+    max-height:10vh;
 }
 nav div .navButton {
     height:5vh;
@@ -37,21 +61,42 @@ nav div .navButton {
     border-radius:0.5vh;
     border-width:0;
 }
-nav div .navButton:hover {
-    filter: brightness(60%);
+
+footer {
+    height: 150px;
+    padding-top: 10px;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
-.green{
-    background-color:var(--green)
+footer > div{
+    height:100%;
+    max-width:500px;
+    align-content:center;
 }
+footer > div > img{
+    max-height:100%;
+}
+
+
 .mainPic {
-    height: 70vh;
+    min-height:40vh;
+    max-height:70vh;
+    height: 700px;
     width: 100%;
     overflow: hidden; 
+    position:relative;
 }
-.mainPic * {
+.mainPic >img  {
     object-fit:cover;
     min-width: 100%;       
     min-height:100%;
+}
+.mainPic > h1{
+    position:absolute;
+    padding-top:5vh;
+    font-size:calc(75px + 0.1vh;);
 }
 .landscape{
     height:100%
@@ -81,12 +126,13 @@ section > * {
 }
 section > div {
     max-height: 400px;
-    width: 500px;
+    max-width: 500px;
     overflow: hidden;
-    margin:20px;
+    
 }
-section > .picture{
-    box-shadow:0px 0px 200px -50px #000000;
+section > .picture {
+    box-shadow: 0 0 100px -9px grey;
+    padding: 0 !important;
 }
 section > .picture > img {
     height:100%;
