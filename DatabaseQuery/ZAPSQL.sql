@@ -1,5 +1,7 @@
+--Choose Zap_beach_camping
 USE ZAP_Beach_Camping;
 
+--Table Drops If they exists
 DROP TABLE IF EXISTS BookingsLinked;
 DROP TABLE IF EXISTS Attributeslinked;
 DROP TABLE IF EXISTS SpotsLinked;
@@ -10,6 +12,7 @@ DROP TABLE IF EXISTS Spot;
 DROP TABLE IF EXISTS Prices;
 DROP TABLE IF EXISTS Attributes;
 
+--Main Tables
 CREATE TABLE Customer (
 	customerID INT IDENTITY(1,1) PRIMARY KEY,
 	firstName VARCHAR(255),
@@ -19,7 +22,6 @@ CREATE TABLE Customer (
 	adress VARCHAR(255)
 );
 
-
 CREATE TABLE Booking(
 	bookingID INT IDENTITY(1,1) PRIMARY KEY,
 	startDate DATE,
@@ -28,7 +30,7 @@ CREATE TABLE Booking(
 	adult INT,
 	child INT,
 	dogs INT,
-	fullprice FLOAT
+	fullprice DECIMAL
 );
 
 CREATE TABLE Spot(
@@ -38,15 +40,16 @@ CREATE TABLE Spot(
 
 CREATE TABLE Prices(
 	nameKey VARCHAR(255) PRIMARY KEY,
-	lowSeason FLOAT,
-	highSeason FLOAT
+	lowSeason DECIMAL,
+	highSeason DECIMAL
 );
 
 CREATE TABLE Attributes(
 	attrType VARCHAR(255) PRIMARY KEY,
-	price FLOAT
+	price DECIMAL
 );
 
+--Table's with foreign keys that works as linked tables
 CREATE TABLE BookingsLinked(
 	customerID INT,
 	bookingID INT,
@@ -80,21 +83,21 @@ CREATE TABLE SpotsPriceLinked(
 	CONSTRAINT PK_SpotsPriceLinked PRIMARY KEY (spotID,priceID)
 );
 
---Attributes;
+--Attributes for all the different types of extra's you can have 
 INSERT INTO Attributes VALUES ('Sengelinned',30);
 INSERT INTO Attributes VALUES ('MorgenKomplet (Voksen)', 75);
-INSERT INTO Attributes VALUES ('MorgenKomplet (Børn)', 50);
-INSERT INTO Attributes VALUES ('Slutrengøring', 150);
+INSERT INTO Attributes VALUES ('MorgenKomplet (Bï¿½rn)', 50);
+INSERT INTO Attributes VALUES ('Slutrengï¿½ring', 150);
 INSERT INTO Attributes VALUES ('Cykelleje', 200);
 INSERT INTO Attributes VALUES ('Adgang til Badeland (Voksen)', 30);
-INSERT INTO Attributes VALUES ('Adgang til Badeland (Børn)', 15);
+INSERT INTO Attributes VALUES ('Adgang til Badeland (Bï¿½rn)', 15);
 
---Prices
+--Prices splittet by high season or low season
 INSERT INTO Prices VALUES ('Campingvognplads (lille)', 60,50);
 INSERT INTO Prices VALUES ('Campingvognplads (Stor)', 80, 65);
 INSERT INTO Prices VALUES ('Teltplads', 35, 45);
 INSERT INTO Prices VALUES ('Standard Hytte', 500, 350);
 INSERT INTO Prices VALUES ('Luksus Hytte', 850, 600);
 INSERT INTO Prices VALUES ('Voksne', 82, 87);
-INSERT INTO Prices VALUES ('Børn', 42, 49);
+INSERT INTO Prices VALUES ('Bï¿½rn', 42, 49);
 INSERT INTO Prices VALUES ('Hund', 30, 30);
