@@ -8,7 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ZAP Beach Camping</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link href="Styles.css" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" />
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,400&display=swap" rel="stylesheet">
+    
 </head>
 <body class="container-fluid">
     <form runat="server" >
@@ -32,13 +36,23 @@
         <asp:ContentPlaceHolder ID="MainContent" runat="server">
         </asp:ContentPlaceHolder>
         <footer class="row">
-            <div class="col-md-5 col-12">
+            <div class="col-md-4 img">
                 <img src="/Pictures/Logo.png" alt="" />
             </div>
-            <div class="col-md-5 col-12 ">
-                <div>
+            <div class="col-md-3 col-4">
+                <p>
+                    <a href="/">Forside</a>
+                </p>
+                <p>
+                    <a href="/About.aspx">Om os</a>
+                </p>
+                <p>
+                    <a href="/">Bestil plads</a>
+                </p>
+            </div>
+            <div class="col-md-3 col-4">
                     <p>
-                        <a href="mailto:Info@ZAPBeachCamping.dk"><span class="white">Email: </span>Info@ZAPBeachCamping.dk</a>
+                        <a href="mailto:Info@ZAPBeachCamping.dk"><span class="white">Email: </span>xxx@ZAPBeachCamping.dk</a>
 
                     </p>
                     <p>
@@ -48,10 +62,9 @@
                     <p>
                         <a href="https://maps.google.com/?q=Ahorne Alle ringsted" target="_blank"><span class="white">Adresse: </span>xxxxxxx</a>
                     </p>
-                    <p>
+                    <p class="white">
                         CVR: 38424756
                     </p>
-                 </div>
             </div>
             
         </footer>

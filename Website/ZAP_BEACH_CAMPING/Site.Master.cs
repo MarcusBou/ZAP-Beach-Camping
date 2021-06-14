@@ -23,7 +23,7 @@ namespace ZAP_BEACH_CAMPING
         }
         protected void redirectOrder(object sender, EventArgs e)
         {
-            Response.Redirect("/");
+            Response.Redirect("/Order.aspx");
         }
     }
 }
