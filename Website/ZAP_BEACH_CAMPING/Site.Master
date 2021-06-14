@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ZAP Beach Camping</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link href="styles.css" rel="stylesheet" />
+    <link href="Style.css" rel="stylesheet" />
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,400&display=swap" rel="stylesheet">
@@ -19,16 +19,34 @@
         
 
         <nav class="row">
-            <div class="col-sm-4">
-                <a href="/Default.aspx" class="hover">
+            <div class="col-sm-4 col-xs-6">
+                <a href="/Default.aspx" class="hover" >
                     <img src="/Pictures/logo.png" alt="" class="hover"/>
                 </a>
+                
             </div>
-            <div class="col-sm-4">
-                <asp:Button Text="Om os" runat="server" class="navButton hover" onclick="redirectAbout"/>
+            <div class="horizontalNavbar col-sm-8">
+                <div class="">
+                    <asp:Button Text="Om os" runat="server" class="navButton hover" onclick="redirectAbout"/>
+                    
+                </div>
+                <div class="">
+                    <asp:Button Text="Bestil Plads" runat="server" class="green navButton hover" onclick="redirectOrder"/>
+                </div>
             </div>
-            <div class="col-sm-4">
-                <asp:Button Text="Bestil Plads" runat="server" class="green navButton hover" onclick="redirectOrder"/>
+            
+            <div class="verticalNavbar col-xs-6">
+                <a class="hover" onclick="showVerticalNavbar()" class="col-xs-12">
+                    <img src="/Pictures/MenuIcon.png" alt="" class="navMenuIcon">
+                </a>
+                <div id="verticalNavbarOption" class="verticalNavbarOptions">
+                    <div class="">
+                        <asp:Button Text="Om os" runat="server" class="navButton hover" onclick="redirectAbout"/>
+                    </div>
+                    <div class="">
+                        <asp:Button Text="Bestil Plads" runat="server" class="green navButton hover" onclick="redirectOrder"/>
+                    </div>
+                </div>
             </div>
             
         </nav>
@@ -73,5 +91,22 @@
            
 
     </form>
+    <script>    
+        
+        function showVerticalNavbar(){
+            
+            var x = document.getElementById("verticalNavbarOption")
+            console.log(x.style.display);
+            if (x.style.display === "none")
+            {
+                x.style.display = "block";
+            }
+            else
+            {
+                x.style.display = "none";
+            }
+            console.log("ayy");
+        }
+    </script>
 </body>
 </html>

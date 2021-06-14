@@ -1,5 +1,5 @@
 ﻿:root {
-    --black: #444444;
+    --black: #666666;
     --green: #32CD32;
 }
 .green {
@@ -17,6 +17,7 @@
 }
 .hover:hover {
     filter: brightness(60%);
+    background-color:blue;
 }
 *{ 
     margin:0;
@@ -48,12 +49,11 @@ nav {
 
 }
 nav > div {
-    margin: 0px 10px 0px 10px;
+    margin: 0 10px 0 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
-    max-width: 333px;
     font-size: 20px;
 }
 
@@ -65,13 +65,64 @@ nav > div > a > img{
     width:100%;
     height:100%;
 }
-nav > div > .navButton {
+nav > .horizontalNavbar > div > .navButton {
     height:50px;
     padding:5px;
     border-radius:0.5vh;
     border-width:0;
 }
+nav > .horizontalNavbar > div{
+    width:50%;
+    text-align: center;
+}
+nav .horizontalNavbar{
+    
+}
+.verticalNavbar{
+    display:none;
+    flex-wrap:wrap;
+    position:relative;
+    justify-content: center;
+}
+.verticalNavbar .verticalNavbarOptions{
+    height:150px;
+    width:300px;
+    text-align: center;
+    background-color: var(--black);
+    padding-top:25px;
+    
+}
+.verticalNavbar .verticalNavbarOptions .navButton{
+    height:50px;
+    width:200px;
+    border-radius:0.5vh;
+    border-width:0;
+    
+}
+.verticalNavbarOption{
+    display:none;
+}
 
+nav .menuIcon{
+    
+}
+nav .menuIcon > a{
+    height: 100px;
+    width:100px;
+}
+nav .navMenuIcon{
+    height:75px;
+}
+
+
+@media (max-width:500px){
+    .verticalNavbar{
+        display:inline;
+    }
+    .horizontalNavbar{
+        display:none;
+    }
+}
 footer {
     min-height: 150px;
     padding-top: 10px;
@@ -114,7 +165,7 @@ footer > .img{
 .mainPic > h1{
     position:absolute;
     padding-top:5vh;
-    font-size:calc(75px + 0.1vh;);
+    font-size:calc(75px + 0.1vh);
 }
 
 .landscape{
@@ -129,7 +180,6 @@ section{
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
-    
     
 }
 section > div {
