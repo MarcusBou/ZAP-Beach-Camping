@@ -30,7 +30,6 @@ CREATE TABLE Booking(
 	adult INT,
 	child INT,
 	dogs INT,
-	fullprice DECIMAL
 );
 
 CREATE TABLE Spot(
@@ -86,11 +85,11 @@ CREATE TABLE SpotsPriceLinked(
 --Attributes for all the different types of extra's you can have 
 INSERT INTO Attributes VALUES ('Sengelinned',30);
 INSERT INTO Attributes VALUES ('MorgenKomplet (Voksen)', 75);
-INSERT INTO Attributes VALUES ('MorgenKomplet (B�rn)', 50);
-INSERT INTO Attributes VALUES ('Slutreng�ring', 150);
+INSERT INTO Attributes VALUES ('MorgenKomplet (Barn)', 50);
+INSERT INTO Attributes VALUES ('Slutrengoring', 150);
 INSERT INTO Attributes VALUES ('Cykelleje', 200);
 INSERT INTO Attributes VALUES ('Adgang til Badeland (Voksen)', 30);
-INSERT INTO Attributes VALUES ('Adgang til Badeland (B�rn)', 15);
+INSERT INTO Attributes VALUES ('Adgang til Badeland (Barn)', 15);
 
 --Prices splittet by high season or low season
 INSERT INTO Prices VALUES ('Campingvognplads (lille)', 60,50);
@@ -99,5 +98,8 @@ INSERT INTO Prices VALUES ('Teltplads', 35, 45);
 INSERT INTO Prices VALUES ('Standard Hytte', 500, 350);
 INSERT INTO Prices VALUES ('Luksus Hytte', 850, 600);
 INSERT INTO Prices VALUES ('Voksne', 82, 87);
-INSERT INTO Prices VALUES ('B�rn', 42, 49);
+INSERT INTO Prices VALUES ('Barn', 42, 49);
 INSERT INTO Prices VALUES ('Hund', 30, 30);
+
+INSERT INTO Customer VALUES('Cusser', 'Kasser', 'PabloEscobar@gmail.com', '88888888', 'Bævervej 88')
+INSERT INTO Booking VALUES('2021-07-18', '2021-07-20', 'House', 4, 6, 1, 1500)
