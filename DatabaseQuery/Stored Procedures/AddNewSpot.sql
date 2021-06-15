@@ -30,6 +30,9 @@ BEGIN
 
 	--- Connectes the spotID to the priceKey in the SpotPriceLinked table.
 	INSERT INTO SpotsPriceLinked (spotID, priceID) VALUES ((SELECT spotID FROM Spot WHERE spotID = (SELECT spotID FROM @newSpot)), (SELECT nameKey FROM Prices WHERE nameKey = @type));
-
+	IF (@type ='Campingvognplads (lille)')
+	BEGIN
+	INSERT INTO SpotsPriceLinked (spotID, priceID) VALUES ((SELECT spotID FROM Spot WHERE spotID = (SELECT spotID FROM @newSpot)), (SELECT nameKey FROM Prices WHERE nameKey = 'Teltplads'));
+	END
 END
 GO
