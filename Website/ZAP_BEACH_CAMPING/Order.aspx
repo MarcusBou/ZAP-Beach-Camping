@@ -38,7 +38,9 @@
 
             <asp:CheckBox Text="Stor Plads" runat="server" /><br />
 
-            <asp:CheckBox Text="Luksus Plads" runat="server" /><br /><br />
+            <asp:CheckBox Text="Luksus Hytte" runat="server" /><br />
+            
+            <asp:CheckBox Text="Slutrengøring" runat="server" /><br /><br />
 
             <asp:Label Text="Antal Voksne" runat="server" for="Voksne"/><br />
             <input type="number" name="Voksne" value="0"/><br /> <br />
@@ -60,9 +62,7 @@
 
             <asp:Label Text="Morgenkomplet (Barn)" runat="server" for="MorgenkompletBarn"/><br />
             <input type="number" name="BarnMorgenkomplet" value="0" /> <br /> <br /> 
-
-            <asp:Label Text="Slutrengøring" runat="server" for="Slutrengøring"/><br />
-            <input type="number" name="Slutrengøring" value="0" /> <br /> <br /> 
+            
         </div>
         <div class="col-sm-6 col-xs-12">
             <asp:Label Text="Cykelleje (pr. dag)" runat="server" for="Cykelleje"/><br />

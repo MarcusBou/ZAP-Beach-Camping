@@ -4,7 +4,20 @@
     <projectFile>ZAP_BEACH_CAMPING/ZAP_BEACH_CAMPING.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1bc16dc1-9209-4f3c-9bd9-a3173cb7cb84" name="Default Changelist" comment="" />
+    <list default="true" id="1bc16dc1-9209-4f3c-9bd9-a3173cb7cb84" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ZAP_BEACH_CAMPING/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ZAP_BEACH_CAMPING/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/ZAP_BEACH_CAMPING/config/applicationhost.config" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ZAP_BEACH_CAMPING/config/applicationhost.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/ZAP_BEACH_CAMPING/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ZAP_BEACH_CAMPING/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ZAP_BEACH_CAMPING/Order.aspx" beforeDir="false" afterPath="$PROJECT_DIR$/ZAP_BEACH_CAMPING/Order.aspx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ZAP_BEACH_CAMPING/Order.aspx.designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ZAP_BEACH_CAMPING/Order.aspx.designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ZAP_BEACH_CAMPING/bin/ZAP_BEACH_CAMPING.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ZAP_BEACH_CAMPING/bin/ZAP_BEACH_CAMPING.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ZAP_BEACH_CAMPING/bin/ZAP_BEACH_CAMPING.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ZAP_BEACH_CAMPING/bin/ZAP_BEACH_CAMPING.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ZAP_BEACH_CAMPING/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ZAP_BEACH_CAMPING/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ZAP_BEACH_CAMPING/obj/Debug/ZAP_BEACH_CAMPING.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ZAP_BEACH_CAMPING/obj/Debug/ZAP_BEACH_CAMPING.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ZAP_BEACH_CAMPING/obj/Debug/ZAP_BEACH_CAMPING.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ZAP_BEACH_CAMPING/obj/Debug/ZAP_BEACH_CAMPING.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ZAP_BEACH_CAMPING/obj/Debug/ZAP_BEACH_CAMPING.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ZAP_BEACH_CAMPING/obj/Debug/ZAP_BEACH_CAMPING.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ZAP_BEACH_CAMPING/obj/Debug/ZAP_BEACH_CAMPING.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ZAP_BEACH_CAMPING/obj/Debug/ZAP_BEACH_CAMPING.pdb" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +30,8 @@
     <changedPaths>
       <option value="$PROJECT_DIR$/ZAP_BEACH_CAMPING/Styles.css" />
       <option value="$PROJECT_DIR$/ZAP_BEACH_CAMPING/Site.Master" />
+      <option value="$PROJECT_DIR$/ZAP_BEACH_CAMPING/About.aspx" />
+      <option value="$PROJECT_DIR$/ZAP_BEACH_CAMPING/Order.aspx" />
       <option value="$PROJECT_DIR$/ZAP_BEACH_CAMPING/Style.css" />
     </changedPaths>
   </component>
@@ -85,13 +100,14 @@
       <option name="presentableId" value="Default" />
       <updated>1623685515185</updated>
       <workItem from="1623685535196" duration="8884000" />
+      <workItem from="1623780864422" duration="912000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

@@ -15,7 +15,7 @@ BEGIN
 	-- interfering with SELECT statements.
 	SET NOCOUNT ON
 	
-    -- Insert statements for procedure here
+    
 	DECLARE @spotIDTable TABLE(
 		id int IDENTITY(1,1),
 		spotID int
@@ -25,7 +25,8 @@ BEGIN
 			startDate date,
 			endDate date
 		);
-	--- Gets all the spots that is the right type
+
+	--- Gets all the spots that is the right type(hasView or not and type).
 	INSERT INTO @spotIDTable
 		SELECT Spot.spotID
 		FROM Spot
@@ -38,9 +39,10 @@ BEGIN
 
 	DECLARE @i int = 1;
 
+	--- Loops through each spot that match the settings (hasView or not and type).
 	WHILE @i <= @idsForEachSpot
 	BEGIN
-		
+		--- Gets all bookings and thier start and end date and saves it in @startEndDate.
 		INSERT INTO @startEndDate
 		SELECT Booking.startDate, Booking.endDate
 			FROM @spotIDTable 
@@ -48,40 +50,59 @@ BEGIN
 				INNER JOIN Booking ON SpotsLinked.bookingID = Booking.bookingID
 				WHERE id = @idsForEachSpot;
 
-		DECLARE @startDate DATE;
-		DECLARE @endDate DATE;
-		DECLARE @j int = 0;
+		
+		
+
+		--- Gets the number of bookings for each spot to be looped through later.
 		DECLARE @bookingsPerSpot INT;
 		SELECT @bookingsPerSpot = MAX(id) FROM @startEndDate;
+		--- The number used to loop throgh bookings.
+		DECLARE @j int = 0;
 
+		---Is true is the spot is booked in on the specific days.
+		DECLARE @Booked bit = 0;
+		
+		--- Loopes one per booking to check the new booking overlaps a booking already made.
 		WHILE @j < @bookingsPerSpot
 		BEGIN
 			SET @j = @j + 1;
+			---Gets the start and end date for the booking that is being looped through.
+			DECLARE @startDate DATE;
+			DECLARE @endDate DATE;
 			SELECT @startDate = startDate FROM @startEndDate WHERE id = @j;
-			
 			SELECT @endDate = endDate FROM @startEndDate WHERE id = @j;
-			DECLARE @Booked bit = 0;
+
+			---If the booking being looped through and the new booking collide then the bit @booked change to 1. 
 			IF (@startDato > @startDate AND @startDato < @endDate OR @slutDato > @startDate AND @slutDato < @endDate)
 			BEGIN
 				SET @Booked = 1;
 				BREAK
 			END
+			---If the booking being looped through and the new booking collide then the bit @booked change to 1. 
 			ELSE IF (@startDate > @startDato AND @startDate < @slutDato OR @endDate> @startDato AND @endDate < @slutDato)
 			BEGIN
 				SET @Booked = 1;
 				BREAK
 			END
-		---Deletes the table so its ready for the next loop
+
+			--- Deletes the table so its ready for the next loop
 			DELETE FROM @startEndDate;
 			
 		END
+		--- If the spot is clear then the spot that is clear is returned.
 		if(@Booked = 0)
 		BEGIN
-			PRINT('is not booked');
-			RETURN (SELECT spotID FROM @spotIDTable WHERE id =@j);
+
+			DECLARE @clearSpot int = 0;
+			SELECT @clearSpot = spotID FROM @spotIDTable WHERE @i = id;
+			PRINT(@clearSpot);
+			RETURN (@clearSpot);
 		END
+		--- Makes so the next spot will be looped though if the spot is not clear.
 		SET @i = @i + 1;
 	END
+	PRINT('No spots are clear');
+	--- IF nothing hasa already been returned then it will return 0 to signifie that there are no avalible booking on the specific dates.
 	RETURN 0;
 END
 GO
