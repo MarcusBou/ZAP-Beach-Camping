@@ -64,13 +64,11 @@ BEGIN
 			IF (@startDato > @startDate AND @startDato < @endDate OR @slutDato > @startDate AND @slutDato < @endDate)
 			BEGIN
 				SET @Booked = 1;
-				PRINT('2');
 				BREAK
 			END
 			ELSE IF (@startDate > @startDato AND @startDate < @slutDato OR @endDate> @startDato AND @endDate < @slutDato)
 			BEGIN
 				SET @Booked = 1;
-				PRINT('1');
 				BREAK
 			END
 		---Deletes the table so its ready for the next loop
@@ -78,12 +76,12 @@ BEGIN
 			
 		END
 		if(@Booked = 0)
-		BEGIN-
+		BEGIN
 			PRINT('is not booked');
-			PRINT('');
+			RETURN (SELECT spotID FROM @spotIDTable WHERE id =@j);
 		END
 		SET @i = @i + 1;
 	END
-	
+	RETURN 0;
 END
 GO
