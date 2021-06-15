@@ -1,6 +1,3 @@
---Choose Zap_beach_camping
-USE ZAP_Beach_Camping;
-
 --Table Drops If they exists
 DROP TABLE IF EXISTS BookingsLinked;
 DROP TABLE IF EXISTS Attributeslinked;
@@ -100,6 +97,3 @@ INSERT INTO Prices VALUES ('Luksus Hytte', 850, 600);
 INSERT INTO Prices VALUES ('Voksne', 82, 87);
 INSERT INTO Prices VALUES ('Barn', 42, 49);
 INSERT INTO Prices VALUES ('Hund', 30, 30);
-
-INSERT INTO Customer VALUES('Cusser', 'Kasser', 'PabloEscobar@gmail.com', '88888888', 'Bævervej 88')
-INSERT INTO Booking VALUES('2021-07-18', '2021-07-20', 'House', 4, 6, 1, 1500)
