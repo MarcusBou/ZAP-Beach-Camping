@@ -3,8 +3,8 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <section class="row ayy">
         
-        <h1 class="col-md-12"> Bestil Plads</h1>
-        <div class="col-md-6">
+        <h1 class="col-sm-12 col-xs-12"> Bestil Plads</h1>
+        <div class="col-sm-6 col-xs-12">
             <asp:Label Text="Navn" runat="server" for="Navn"/><br />
             <input type="text" name="Navn"  /><br /><br />
         
@@ -24,7 +24,7 @@
             <input type="date" name="Afgang" min="1970-1-1" max="2070-1-1-"/><br /><br />
         </div>
 
-        <div class="col-md-6">
+        <div class="col-sm-6 col-xs-12">
             <asp:Label Text="Type" runat="server" for="Type"/><br />
             <select name="Type" >
                 <option>--</option>
@@ -50,8 +50,8 @@
             <input type="number" name="Hunde" value="0" /> <br /> <br />    
         </div>
         
-        <h1 class="col-md-12">Tillæg</h1>
-        <div class="col-md-6">
+        <h1 class="col-sm-12 col-xs-12">Tillæg</h1>
+        <div class="col-sm-6 col-xs-12">
             <asp:Label Text="Sengelinned" runat="server" for="Sengelinned"/><br />
             <input type="number" name="Sengelinned" value="0" /> <br /> <br /> 
 
@@ -64,7 +64,7 @@
             <asp:Label Text="Slutrengøring" runat="server" for="Slutrengøring"/><br />
             <input type="number" name="Slutrengøring" value="0" /> <br /> <br /> 
         </div>
-        <div class="col-md-6">
+        <div class="col-sm-6 col-xs-12">
             <asp:Label Text="Cykelleje (pr. dag)" runat="server" for="Cykelleje"/><br />
             <input type="number" name="Cykelleje" value="0" /> <br /> <br /> 
 
