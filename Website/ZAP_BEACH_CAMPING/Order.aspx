@@ -18,10 +18,10 @@
             <input type="text" name="Adresse" /><br /><br />
         
             <asp:Label Text="Ankomst Dato" runat="server" for="Ankomst"/><br />
-            <input type="date" name="Ankomst" min="1970-1-1" max="2070-1-1-"  /><br /><br />
+            <input type="date" name="Ankomst" min="2020-06-16" max="2070-1-1-" id="startDate" onBlur="EditMinDateOnEndDate()" onfocus="setMinDateOnStartDate()" /><br /><br />
 
             <asp:Label Text="Afgangs Dato" runat="server" for="Afgang"/><br />
-            <input type="date" name="Afgang" min="1970-1-1" max="2070-1-1-"/><br /><br />
+            <input type="date" name="Afgang" min="1970-1-1" max="2070-1-1" id="endDate" /><br /><br />
         </div>
 
         <div class="col-sm-6 col-xs-12">
