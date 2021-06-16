@@ -65,7 +65,7 @@
                     <a href="/About.aspx">Om os</a>
                 </p>
                 <p>
-                    <a href="/">Bestil plads</a>
+                    <a href="/Order.aspx">Bestil plads</a>
                 </p>
             </div>
             <div class="col-md-3 col-4">

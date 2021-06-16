@@ -7,8 +7,9 @@ CREATE OR ALTER PROCEDURE CheckSpot
 	-- Add the parameters for the stored procedure here
 	@type varChar(50),
 	@hasView bit,
-	@startDato date,
-	@slutDato date
+	@newBookingStartDate date,
+	@newBookingEndDate date,
+	@bookingID int
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -73,13 +74,13 @@ BEGIN
 			SELECT @endDate = endDate FROM @startEndDate WHERE id = @j;
 
 			---If the booking being looped through and the new booking collide then the bit @booked change to 1. 
-			IF (@startDato > @startDate AND @startDato < @endDate OR @slutDato > @startDate AND @slutDato < @endDate)
+			IF (@newBookingStartDate > @startDate AND @newBookingStartDate < @endDate OR @newBookingEndDate > @startDate AND @newBookingEndDate < @endDate)
 			BEGIN
 				SET @Booked = 1;
 				BREAK
 			END
 			---If the booking being looped through and the new booking collide then the bit @booked change to 1. 
-			ELSE IF (@startDate > @startDato AND @startDate < @slutDato OR @endDate> @startDato AND @endDate < @slutDato)
+			ELSE IF (@startDate > @newBookingStartDate AND @startDate < @newBookingEndDate OR @endDate> @newBookingStartDate AND @endDate < @newBookingEndDate)
 			BEGIN
 				SET @Booked = 1;
 				BREAK
@@ -95,6 +96,7 @@ BEGIN
 
 			DECLARE @clearSpot int = 0;
 			SELECT @clearSpot = spotID FROM @spotIDTable WHERE @i = id;
+			INSERT INTO SpotsLinked (bookingID, spotID) VALUES (@bookingID, @clearSpot);
 			PRINT(@clearSpot);
 			RETURN (@clearSpot);
 		END

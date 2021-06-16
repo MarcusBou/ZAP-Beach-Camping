@@ -32,7 +32,7 @@ BEGIN
 	INSERT INTO SpotsPriceLinked (spotID, priceID) VALUES ((SELECT spotID FROM Spot WHERE spotID = (SELECT spotID FROM @newSpot)), (SELECT nameKey FROM Prices WHERE nameKey = @type));
 	IF (@type ='Campingvognplads (lille)')
 	BEGIN
-	INSERT INTO SpotsPriceLinked (spotID, priceID) VALUES ((SELECT spotID FROM Spot WHERE spotID = (SELECT spotID FROM @newSpot)), (SELECT nameKey FROM Prices WHERE nameKey = 'Teltplads'));
+		INSERT INTO SpotsPriceLinked (spotID, priceID) VALUES ((SELECT spotID FROM Spot WHERE spotID = (SELECT spotID FROM @newSpot)), (SELECT nameKey FROM Prices WHERE nameKey = 'Teltplads'));
 	END
 END
 GO
