@@ -24,25 +24,36 @@
             <input type="date" name="Afgang" min="1970-1-1" max="2070-1-1" id="endDate" /><br /><br />
         </div>
 
+        
         <div class="col-sm-6 col-xs-12">
             <asp:Label Text="Type" runat="server" for="typeSelector"/><br />
-            <select name="Type" ID="typeSelector" onblur="EditShownAttributes()">
+            <select name="Type" ID="typeSelector" onchange="EditShownAttributes()">
                 <option>--</option>
                 <option value="Campingplads" >Campingplads</option>
                 <option value="Teltplads" >Teltplads</option>
-                <option value="Hytte" >Hytte</option>
-                <option value="Luksus Hytte">Hytte</option>
+                <option value="Standard Hytte" >Standard Hytte</option>
+                <option value="Luksus Hytte">Luksus Hytte</option>
                 <option value="Sæsonplads" >Sæsonplads</option>
             </select><br /><br />
+            <div>
 
-            <asp:CheckBox Text="Med Udsigt" runat="server" /><br />
-            <div ID="bigSpotOptions" class="none">
-                <asp:CheckBox Text="Stor Plads" runat="server" /><br />
+                <asp:CheckBox Text="Med Udsigt" runat="server" /><br />
+
+                <div ID="bigSpotOptions" class="none">
+                    <asp:CheckBox ID="BigSpot" Text="Stor Plads" runat="server" /><br />
+                </div>
+                <div id="cabinOptions" class="none">
+                    <asp:CheckBox ID="cleaning" Text="Slutrengøring" runat="server"/><br /><br />
+                </div>
+                <div id="seasonOptions" class="none">
+                    <asp:RadioButton Text="Forår (1. april - 30. juni)" GroupName="SeasonSpot" runat="server" /><br />
+                    <asp:RadioButton Text="Sommer (1. april - 30. september)" GroupName="SeasonSpot" runat="server" /><br />
+                    <asp:RadioButton Text="Efterår (15. August - 31. Oktober)" GroupName="SeasonSpot" runat="server" /><br />
+                    <asp:RadioButton Text="Vinter (1. Oktober - 31. Marts)" GroupName="SeasonSpot" runat="server" /><br />
+                    
+                </div>
             </div>
-            <div id="cabinOptions" class="none">
-            
-                <asp:CheckBox Text="Slutrengøring" runat="server" id="SæsonpladsOption"/><br /><br />
-            </div>
+
             <asp:Label Text="Antal Voksne" runat="server" for="Voksne"/><br />
             <input type="number" name="Voksne" value="0"/><br /> <br />
 

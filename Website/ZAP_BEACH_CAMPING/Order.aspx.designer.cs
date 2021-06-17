@@ -15,22 +15,22 @@ namespace ZAP_BEACH_CAMPING
     {
 
         /// <summary>
-        /// HytteOption control.
+        /// BigSpot control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox HytteOption;
+        protected global::System.Web.UI.WebControls.CheckBox BigSpot;
 
         /// <summary>
-        /// SæsonpladsOption control.
+        /// cleaning control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox SæsonpladsOption;
+        protected global::System.Web.UI.WebControls.CheckBox cleaning;
 
         /// <summary>
         /// TotalSpotFee control.

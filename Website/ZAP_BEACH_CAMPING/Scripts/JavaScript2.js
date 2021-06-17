@@ -37,19 +37,35 @@ function EditShownAttributes() {
     var type = document.getElementById("typeSelector"); 
     switch (type.value) {
         case "Campingplads":
-            document.getElementById("cabinOptions").style.display = "none";
+            typeChoosingChanged();
+            UncheckBoxes();
             document.getElementById("bigSpotOptions").style.display = "block";
             break;
         case "Teltplads":
-            document.getElementById("cabinOptions").style.display = "none";
-            document.getElementById("bigSpotOptions").style.display = "block";
+            typeChoosingChanged();
+            UncheckBoxes();
             break;
-        case "Hytte":
-            document.getElementById("bigSpotOptions").style.display = "none";
+        case "Standard Hytte":
+            typeChoosingChanged();
+            UncheckBoxes();
+            document.getElementById("cabinOptions").style.display = "block";
+            break;
+        case "Luksus Hytte":
+            typeChoosingChanged();
+            UncheckBoxes();
             document.getElementById("cabinOptions").style.display = "block";
             break;
         case "Sæsonplads":
-
+            typeChoosingChanged();
+            UncheckBoxes();
+            document.getElementById("bigSpotOptions").style.display = "block";
+            document.getElementById("seasonOptions").style.display = "block";
             break;
     }
+}
+//Zeroes choosing
+function typeChoosingChanged() {
+    document.getElementById("cabinOptions").style.display = "none";
+    document.getElementById("bigSpotOptions").style.display = "none";
+    document.getElementById("seasonOptions").style.display = "none";
 }
