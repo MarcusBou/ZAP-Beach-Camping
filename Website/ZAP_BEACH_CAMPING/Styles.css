@@ -18,6 +18,9 @@
 .hover:hover {
     filter: brightness(60%);
 }
+.none{
+    display:none;
+}
 *{ 
     margin:0;
     padding:0;

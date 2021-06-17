@@ -25,23 +25,24 @@
         </div>
 
         <div class="col-sm-6 col-xs-12">
-            <asp:Label Text="Type" runat="server" for="Type"/><br />
-            <select name="Type" >
+            <asp:Label Text="Type" runat="server" for="typeSelector"/><br />
+            <select name="Type" ID="typeSelector" onblur="EditShownAttributes()">
                 <option>--</option>
-                <option value="Campingplads">Campingplads</option>
-                <option value="Teltplads">Teltplads</option>
-                <option value="Hytte">Hytte</option>
-                <option value="Sæsonplads">Sæsonplads</option>
+                <option value="Campingplads" >Campingplads</option>
+                <option value="Teltplads" >Teltplads</option>
+                <option value="Hytte" >Hytte</option>
+                <option value="Sæsonplads" >Sæsonplads</option>
             </select><br /><br />
 
             <asp:CheckBox Text="Med Udsigt" runat="server" /><br />
-
-            <asp:CheckBox Text="Stor Plads" runat="server" /><br />
-
-            <asp:CheckBox Text="Luksus Hytte" runat="server" /><br />
+            <div ID="bigSpotOptions" class="none">
+                <asp:CheckBox Text="Stor Plads" runat="server" /><br />
+            </div>
+            <div id="cabinOptions" class="none">
+                <asp:CheckBox Text="Luksus Hytte" runat="server" id="HytteOption"/><br />
             
-            <asp:CheckBox Text="Slutrengøring" runat="server" /><br /><br />
-
+                <asp:CheckBox Text="Slutrengøring" runat="server" id="SæsonpladsOption"/><br /><br />
+            </div>
             <asp:Label Text="Antal Voksne" runat="server" for="Voksne"/><br />
             <input type="number" name="Voksne" value="0"/><br /> <br />
 
