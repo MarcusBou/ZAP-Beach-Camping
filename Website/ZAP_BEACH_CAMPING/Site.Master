@@ -12,6 +12,7 @@
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,400&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="/Scripts/JavaScript.js"></script>
     
 </head>
 <body class="container-fluid">
@@ -91,22 +92,6 @@
            
 
     </form>
-    <script>    
-        
-        function showVerticalNavbar(){
-            
-            var x = document.getElementById("verticalNavbarOption")
-            console.log(x.style.display);
-            if (x.style.display === "none")
-            {
-                x.style.display = "block";
-            }
-            else
-            {
-                x.style.display = "none";
-            }
-            console.log("ayy");
-        }
-    </script>
+    
 </body>
 </html>
