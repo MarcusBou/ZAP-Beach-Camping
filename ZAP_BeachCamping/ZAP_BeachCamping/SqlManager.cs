@@ -54,15 +54,15 @@ namespace ZAP_BeachCamping
             OpenOrCloseConn(false);//Closes Connection
         }
 
-        public void AddNewSpot(string type, int hasview)
+        public void AddNewSpot(string type, int hasview)//Method for adding new spots to the SQLDB
         {
-            SqlCommand cmd = new SqlCommand("AddNewSpot", conn);
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("hasView", hasview);
+            SqlCommand cmd = new SqlCommand("AddNewSpot", conn);//Sets which command is used
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;//Sets the Command type
+            cmd.Parameters.AddWithValue("hasView", hasview);//Add parameter to stored procedure
             cmd.Parameters.AddWithValue("type", type);
-            OpenOrCloseConn(true);
-            cmd.ExecuteNonQuery();
-            OpenOrCloseConn(false);
+            OpenOrCloseConn(true);//opens connection
+            cmd.ExecuteNonQuery();//Executes query
+            OpenOrCloseConn(false);//Close Connection
         }
     }
 }
