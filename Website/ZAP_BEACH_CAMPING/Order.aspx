@@ -31,14 +31,13 @@
                 <option value="Campingplads">Campingplads</option>
                 <option value="Teltplads">Teltplads</option>
                 <option value="Hytte">Hytte</option>
+                <option value="Luksus Hytte">Hytte</option>
                 <option value="Sæsonplads">Sæsonplads</option>
             </select><br /><br />
 
             <asp:CheckBox Text="Med Udsigt" runat="server" /><br />
 
             <asp:CheckBox Text="Stor Plads" runat="server" /><br />
-
-            <asp:CheckBox Text="Luksus Hytte" runat="server" /><br />
             
             <asp:CheckBox Text="Slutrengøring" runat="server" /><br /><br />
 

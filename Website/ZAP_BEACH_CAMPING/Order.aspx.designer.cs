@@ -7,57 +7,47 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ZAP_BEACH_CAMPING {
-    
-    
-    public partial class Order {
-        
+namespace ZAP_BEACH_CAMPING
+{
+
+
+    public partial class Order
+    {
+
         /// <summary>
         /// TotalSpotFee control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label TotalSpotFee;
-        
+
         /// <summary>
         /// TotalPersonalFee control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label TotalPersonalFee;
-        
+
         /// <summary>
         /// TotalDiscount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label TotalDiscount;
-        
+
         /// <summary>
         /// TotalPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
-        /// To modify, move the field declaration from the designer file to a code-behind file.
+        /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label TotalPrice;
-        
-        /// <summary>
-        /// Master property.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated property.
-        /// </remarks>
-        public new ZAP_BEACH_CAMPING.SiteMaster Master {
-            get {
-                return ((ZAP_BEACH_CAMPING.SiteMaster)(base.Master));
-            }
-        }
     }
 }
