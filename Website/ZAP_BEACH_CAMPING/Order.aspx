@@ -31,6 +31,7 @@
                 <option value="Campingplads" >Campingplads</option>
                 <option value="Teltplads" >Teltplads</option>
                 <option value="Hytte" >Hytte</option>
+                <option value="Luksus Hytte">Hytte</option>
                 <option value="Sæsonplads" >Sæsonplads</option>
             </select><br /><br />
 
@@ -39,7 +40,6 @@
                 <asp:CheckBox Text="Stor Plads" runat="server" /><br />
             </div>
             <div id="cabinOptions" class="none">
-                <asp:CheckBox Text="Luksus Hytte" runat="server" id="HytteOption"/><br />
             
                 <asp:CheckBox Text="Slutrengøring" runat="server" id="SæsonpladsOption"/><br /><br />
             </div>
