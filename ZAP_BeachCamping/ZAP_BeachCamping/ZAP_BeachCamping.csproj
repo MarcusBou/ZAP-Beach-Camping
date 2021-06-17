@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Booking.cs" />
+    <Compile Include="BookingManager.cs" />
     <Compile Include="SqlManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
