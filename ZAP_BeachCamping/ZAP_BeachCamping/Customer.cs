@@ -15,12 +15,12 @@ namespace ZAP_BeachCamping
         private string phoneNum;
         private Booking wishedBooking;
 
-        public string FirstName { get; private set; }
-        public string LastName { get; private set; }
-        public string Email { get; private set; }
-        public string Address { get; private set;  }
-        public string PhoneNum { get; private set; }
-        public Booking WishedBooking { get; set; }
+        public string FirstName { get { return firstName; }}
+        public string LastName { get { return lastName; } }
+        public string Email { get { return email; } }
+        public string Address { get { return address; } }
+        public string PhoneNum { get { return phoneNum; } }
+        public Booking WishedBooking { get { return wishedBooking; } set { wishedBooking = value; } }
 
         public Customer(string firstName, string lastName, string email, string address, string phoneNum)
         {
