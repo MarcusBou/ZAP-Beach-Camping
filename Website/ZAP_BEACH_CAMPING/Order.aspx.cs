@@ -16,7 +16,8 @@ namespace ZAP_BEACH_CAMPING
 
         protected void OrderSpot(object sender, EventArgs e)
         {
-
+            string firstName = FirstName.Text;
+            string lastName = LastName.Text;
         }
     }
 }

@@ -15,6 +15,24 @@ namespace ZAP_BEACH_CAMPING
     {
 
         /// <summary>
+        /// Fornavn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Fornavn;
+
+        /// <summary>
+        /// Efternavn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Efternavn;
+
+        /// <summary>
         /// BigSpot control.
         /// </summary>
         /// <remarks>

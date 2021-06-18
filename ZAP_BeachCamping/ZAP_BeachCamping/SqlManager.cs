@@ -25,7 +25,7 @@ namespace ZAP_BeachCamping
             }
         }
 
-        public void AddNewBookings(string fName, string lName, string email, string phoneNumb, string address, string sDate, string eDate, string type, int adults, int Children, int dogs, int adgangbadB, int adgangbadA, int cykelleje, int morgenKompletB, int morgenKompletA, int sengelinned, int slutrengøring, int hasView)
+        public void AddNewBookings(string fName, string lName, string email, string phoneNumb, string address, DateTime sDate, DateTime eDate, string type, int adults, int Children, int dogs, int adgangbadB, int adgangbadA, int cykelleje, int morgenKompletB, int morgenKompletA, int sengelinned, int slutrengøring, int hasView)
         {
             SqlCommand addCmd = new SqlCommand("AddNewBooking", conn);
             addCmd.CommandType = System.Data.CommandType.StoredProcedure;
