@@ -39,3 +39,5 @@ END
 
 EXEC AddNewBooking 'Cusser', 'Kasser', 'PabloEscobar@gmail.com', '88888888', 'Bævervej 88', '2021-07-18', '2021-07-20', 'Luksus Hytte', 4, 6, 1, 6, 4, 2, 6, 4, 1, 0, 0;
 SELECT * FROM SpotsPriceLinked;
+SELECT * FROM SpotsPriceLinked WHERE priceID = 'Teltplads';
+SELECT * FROM SpotsPriceLinked
