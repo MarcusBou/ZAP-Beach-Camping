@@ -5,9 +5,12 @@
         
         <h1 class="col-sm-12 col-xs-12"> Bestil Plads</h1>
         <div class="col-sm-6 col-xs-12">
-            <asp:Label Text="Navn" runat="server" for="Navn"/><br />
-            <input type="text" name="Navn"  /><br /><br />
-        
+            <asp:Label Text="Fornavn" runat="server" for="Fornavn"/><br />
+            <asp:TextBox runat="server" type="text" name="Fornavn"  id="Fornavn"/><br /><br />
+            
+            <asp:Label Text="Efternavn" runat="server" for="Efternavn"/><br />
+            <asp:TextBox runat="server" type="text" name="Efternavn"  id="Efternavn"/><br /><br />
+
             <asp:Label Text="Email" runat="server" for="Email"/><br />
             <input type="text" name="Email"  /><br /><br />
 
@@ -97,7 +100,7 @@
             <h1>Pris i alt: <asp:Label Text="0.0" runat="server" id="TotalPrice"/> DKK</h1>
         </div>
         <div class="col-md-6">
-            <asp:Button Text="Bestil Plads" runat="server" OnClick="OrderSpot" CssClass="orderButton green hover"/>
+            <asp:Button  Text="Bestil Plads" runat="server" OnClick="OrderSpot" CssClass="orderButton green hover"/>
         </div>
     </section>
 </asp:Content>
