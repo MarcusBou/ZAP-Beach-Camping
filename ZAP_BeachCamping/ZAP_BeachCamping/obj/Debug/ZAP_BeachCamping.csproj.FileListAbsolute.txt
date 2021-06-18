@@ -1,0 +1,6 @@
+C:\Users\marc8847\Documents\GitHub\ZAP-Beach-Camping\ZAP_BeachCamping\ZAP_BeachCamping\bin\Debug\ZAP_BeachCamping.dll
+C:\Users\marc8847\Documents\GitHub\ZAP-Beach-Camping\ZAP_BeachCamping\ZAP_BeachCamping\bin\Debug\ZAP_BeachCamping.pdb
+C:\Users\marc8847\Documents\GitHub\ZAP-Beach-Camping\ZAP_BeachCamping\ZAP_BeachCamping\obj\Debug\ZAP_BeachCamping.csproj.AssemblyReference.cache
+C:\Users\marc8847\Documents\GitHub\ZAP-Beach-Camping\ZAP_BeachCamping\ZAP_BeachCamping\obj\Debug\ZAP_BeachCamping.csproj.CoreCompileInputs.cache
+C:\Users\marc8847\Documents\GitHub\ZAP-Beach-Camping\ZAP_BeachCamping\ZAP_BeachCamping\obj\Debug\ZAP_BeachCamping.dll
+C:\Users\marc8847\Documents\GitHub\ZAP-Beach-Camping\ZAP_BeachCamping\ZAP_BeachCamping\obj\Debug\ZAP_BeachCamping.pdb
