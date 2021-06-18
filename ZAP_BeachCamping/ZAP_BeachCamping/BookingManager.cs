@@ -19,12 +19,12 @@ namespace ZAP_BeachCamping
             Customer customer = new Customer(firstName, lastName, email, address, phoneNum);
             return customer;
         }
-        public Booking CreateBooking(DateTime startDate, DateTime endDate, string type, int adult, int child, int dog, int adgangBadelandBarn, int adgangBadelandVoksen, int cykelleje, int morgenkompletBarn, int morgenkompletVoksen, int sengelinned, int slutrengøring, int hasView)
+        public Booking CreateBooking(string startDate, string endDate, string type, int adult, int child, int dog, int adgangBadelandBarn, int adgangBadelandVoksen, int cykelleje, int morgenkompletBarn, int morgenkompletVoksen, int sengelinned, int slutrengøring, int hasView)
         {
             Booking booking = new Booking(startDate, endDate, type, adult, child, dog, adgangBadelandBarn, adgangBadelandVoksen, cykelleje, morgenkompletBarn, morgenkompletVoksen, sengelinned, slutrengøring, hasView);
             return booking;
         }
-        public void BindABookingToCustomer(string firstName, string lastName, string email, string address, string phoneNum, DateTime startDate, DateTime endDate, string type, int adult, int child, int dog, int adgangBadelandBarn, int adgangBadelandVoksen, int cykelleje, int morgenkompletBarn, int morgenkompletVoksen, int sengelinned, int slutrengøring, int hasView)
+        public void BindABookingToCustomer(string firstName, string lastName, string email, string address, string phoneNum, string startDate, string endDate, string type, int adult, int child, int dog, int adgangBadelandBarn, int adgangBadelandVoksen, int cykelleje, int morgenkompletBarn, int morgenkompletVoksen, int sengelinned, int slutrengøring, int hasView)
         {
             Customer customer = CreateCustomer(firstName, lastName, email, address, phoneNum);
             Booking booking = CreateBooking(startDate, endDate, type, adult, child, dog, adgangBadelandBarn, adgangBadelandVoksen, cykelleje, morgenkompletBarn, morgenkompletVoksen, sengelinned, slutrengøring, hasView);

@@ -8,8 +8,8 @@ namespace ZAP_BeachCamping
 {
     public class Booking
     {
-        private DateTime startDate;
-        private DateTime endDate;
+        private string startDate;
+        private string endDate;
         private string type;
         private int adult;
         private int child;
@@ -23,8 +23,8 @@ namespace ZAP_BeachCamping
         private int slutrengøring;
         private int hasView;
 
-        public DateTime StatDate { get; private set; }
-        public DateTime EndDate { get; private set; }
+        public string StatDate { get; private set; }
+        public string EndDate { get; private set; }
         public string Type { get; private set; }
         public int Adult { get; private set; }
         public int Child { get; private set; }
@@ -38,7 +38,7 @@ namespace ZAP_BeachCamping
         public int Slutrengøring { get; private set; }
         public int  HasView { get; private set; }
 
-        public Booking(DateTime startDate, DateTime endDate, string type, int adult, int child, int dog, int adgangBadelandBarn, int adgangBadelandVoksen, int cykelleje, int morgenkompletBarn, int morgenkompletVoksen, int sengelinned, int slutrengøring, int hasView)
+        public Booking(string startDate, string endDate, string type, int adult, int child, int dog, int adgangBadelandBarn, int adgangBadelandVoksen, int cykelleje, int morgenkompletBarn, int morgenkompletVoksen, int sengelinned, int slutrengøring, int hasView)
         {
             this.startDate = startDate;
             this.endDate = endDate;
