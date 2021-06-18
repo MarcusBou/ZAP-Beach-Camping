@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ZAP_BeachCamping
 {
-    class BookingManager
+    public class BookingManager
     {
         private SQLManager SQLconn = new SQLManager();
 

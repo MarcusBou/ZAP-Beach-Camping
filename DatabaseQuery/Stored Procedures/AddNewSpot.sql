@@ -7,11 +7,11 @@ GO
 -- Create date: 15-06-21
 -- Description:	Adds a new spot and connectes it to a price.
 -- =============================================
-CREATE OR ALTER PROCEDURE AddNewSpot 
+CREATE OR ALTER PROCEDURE AddNewSpot
 	-- Add the parameters for the stored procedure here
-	 
+
 	@hasView bit,
-	@type varChar(50)
+		@type varChar(50)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -26,13 +26,13 @@ BEGIN
     -- Inserts the Spot to the table and saves the spotID in the @newSpot table.
 	 INSERT INTO Spot (hasView)
 		OUTPUT Inserted.spotID INTO @newSpot
-		Values (@hasView);	
+		Values (@hasView);
 
 	--- Connectes the spotID to the priceKey in the SpotPriceLinked table.
 	INSERT INTO SpotsPriceLinked (spotID, priceID) VALUES ((SELECT spotID FROM Spot WHERE spotID = (SELECT spotID FROM @newSpot)), (SELECT nameKey FROM Prices WHERE nameKey = @type));
 	IF (@type ='Campingvognplads (lille)')
 	BEGIN
-		INSERT INTO SpotsPriceLinked (spotID, priceID) VALUES ((SELECT spotID FROM Spot WHERE spotID = (SELECT spotID FROM @newSpot)), (SELECT nameKey FROM Prices WHERE nameKey = 'Teltplads'));
+	INSERT INTO SpotsPriceLinked (spotID, priceID) VALUES ((SELECT spotID FROM Spot WHERE spotID = (SELECT spotID FROM @newSpot)), (SELECT nameKey FROM Prices WHERE nameKey = 'Teltplads'));
 	END
 END
 GO

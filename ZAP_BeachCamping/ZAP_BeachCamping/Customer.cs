@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ZAP_BeachCamping
 {
-    class Customer
+    public class Customer
     {
         private string firstName;
         private string lastName;

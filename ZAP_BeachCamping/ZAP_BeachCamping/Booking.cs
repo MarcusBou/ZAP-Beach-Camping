@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ZAP_BeachCamping
 {
-    class Booking
+    public class Booking
     {
         private DateTime startDate;
         private DateTime endDate;

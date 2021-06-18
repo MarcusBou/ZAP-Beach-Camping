@@ -98,8 +98,9 @@
     <Reference Include="Microsoft.AspNet.FriendlyUrls">
       <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
     </Reference>
-    <Reference Include="ZAP_BeachCamping">
-      <HintPath>..\..\ZAP_BeachCamping\ZAP_BeachCamping\bin\Debug\ZAP_BeachCamping.dll</HintPath>
+    <Reference Include="ZAP_BeachCamping, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ZAP_BeachCamping\ZAP_BeachCamping\bin\Release\ZAP_BeachCamping.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
