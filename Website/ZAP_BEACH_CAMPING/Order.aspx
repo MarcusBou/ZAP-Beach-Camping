@@ -12,35 +12,35 @@
             <asp:TextBox runat="server" type="text" name="Efternavn"  id="Efternavn"/><br /><br />
 
             <asp:Label Text="Email" runat="server" for="Email"/><br />
-            <input type="text" name="Email"  /><br /><br />
+            <asp:TextBox runat="server" type="text" name="Email" id="Email"/><br /><br />
 
             <asp:Label Text="Telefonnummer" runat="server" for="Telefonnummer"/><br />
-            <input type="number" name="Telefonnummer" /><br /><br />
+            <asp:TextBox runat="server" type="number" name="Telefonnummer" id="Telefonnummer" /><br /><br />
 
             <asp:Label Text="Adresse" runat="server" for="Adresse"/><br />
-            <input type="text" name="Adresse" /><br /><br />
+            <asp:TextBox runat="server" type="text" name="Adresse" id="Adresse"/><br /><br />
         
             <asp:Label Text="Ankomst Dato" runat="server" for="Ankomst"/><br />
-            <input type="date" name="Ankomst" min="2020-06-16" max="2070-1-1-" id="startDate" onBlur="EditMinDateOnEndDate()" onfocus="setMinDateOnStartDate()" /><br /><br />
+            <asp:TextBox runat="server" type="date" name="Ankomst" min="2020-06-16" max="2070-1-1-" id="startDate" onBlur="EditMinDateOnEndDate()" onfocus="setMinDateOnStartDate()" /><br /><br />
 
             <asp:Label Text="Afgangs Dato" runat="server" for="Afgang"/><br />
-            <input type="date" name="Afgang" min="1970-1-1" max="2070-1-1" id="endDate" /><br /><br />
+            <asp:TextBox runat="server" type="date" name="Afgang" min="1970-1-1" max="2070-1-1" id="endDate" /><br /><br />
         </div>
 
         
         <div class="col-sm-6 col-xs-12">
             <asp:Label Text="Type" runat="server" for="typeSelector"/><br />
-            <select name="Type" ID="typeSelector" onchange="EditShownAttributes()">
-                <option>--</option>
-                <option value="Campingplads" >Campingplads</option>
-                <option value="Teltplads" >Teltplads</option>
-                <option value="Standard Hytte" >Standard Hytte</option>
-                <option value="Luksus Hytte">Luksus Hytte</option>
-                <option value="Sæsonplads" >Sæsonplads</option>
-            </select><br /><br />
+            <asp:DropDownList runat="server" name="Type" ID="typeSelector" onchange="EditShownAttributes()">
+                <asp:ListItem>--</asp:ListItem>
+                <asp:ListItem value="Campingplads" >Campingplads</asp:ListItem>
+                <asp:ListItem value="Teltplads" >Teltplads</asp:ListItem>
+                <asp:ListItem value="Standard Hytte" >Standard Hytte</asp:ListItem>
+                <asp:ListItem value="Luksus Hytte">Luksus Hytte</asp:ListItem>
+                <asp:ListItem value="Sæsonplads" >Sæsonplads</asp:ListItem>
+            </asp:DropDownList><br /><br />
             <div>
 
-                <asp:CheckBox Text="Med Udsigt" runat="server" /><br />
+                <asp:CheckBox Text="Med Udsigt" runat="server" id="Udsigt"/><br />
 
                 <div ID="bigSpotOptions" class="none">
                     <asp:CheckBox ID="BigSpot" Text="Stor Plads" runat="server" /><br />
@@ -58,36 +58,36 @@
             </div>
 
             <asp:Label Text="Antal Voksne" runat="server" for="Voksne"/><br />
-            <input type="number" name="Voksne" value="0"/><br /> <br />
+            <asp:TextBox runat="server" type="number" name="Voksne" value="0" ID="Voksne"/><br /> <br />
 
             <asp:Label Text="Antal Børn" runat="server" for="Børn"/><br />
-            <input type="number" name="Børn" value="0"/><br /> <br />
+            <asp:TextBox runat="server" type="number" name="Børn" value="0" id="Børn"/><br /> <br />
 
             <asp:Label Text="Antal Hunde" runat="server" for="Hunde"/><br />
-            <input type="number" name="Hunde" value="0" /> <br /> <br />    
+            <asp:TextBox runat="server" type="number" name="Hunde" value="0" ID="Hund" /> <br /> <br />    
         </div>
         
         <h1 class="col-sm-12 col-xs-12">Tillæg</h1>
         <div class="col-sm-6 col-xs-12">
             <asp:Label Text="Sengelinned" runat="server" for="Sengelinned"/><br />
-            <input type="number" name="Sengelinned" value="0" /> <br /> <br /> 
-
+            <asp:TextBox runat="server" type="number" name="Sengelinned" value="0" id="Sengelinned"/> <br /> <br /> 
+            
             <asp:Label Text="Morgenkomplet (Voksen)" runat="server" for="MorgenkompletVoksen"/><br />
-            <input type="number" name="VoksenMorgenkomplet" value="0" /> <br /> <br /> 
+            <asp:TextBox runat="server" type="number" name="VoksenMorgenkomplet" value="0" id="VoksenMorgenkomplet"/> <br /> <br /> 
 
             <asp:Label Text="Morgenkomplet (Barn)" runat="server" for="MorgenkompletBarn"/><br />
-            <input type="number" name="BarnMorgenkomplet" value="0" /> <br /> <br /> 
+            <asp:TextBox runat="server" type="number" name="BarnMorgenkomplet" value="0" id ="BarnMorgenkomplet"/> <br /> <br /> 
             
         </div>
         <div class="col-sm-6 col-xs-12">
             <asp:Label Text="Cykelleje (pr. dag)" runat="server" for="Cykelleje"/><br />
-            <input type="number" name="Cykelleje" value="0" /> <br /> <br /> 
+            <asp:TextBox runat="server" type="number" name="Cykelleje" value="0" id="Cykelleje"/> <br /> <br /> 
 
             <asp:Label Text="Adgang til badeland (Voksen)" runat="server" for="BadelandVoksen"/><br />
-            <input type="number" name="VoksenBadeland" value="0" /> <br /> <br /> 
+            <asp:TextBox runat="server" type="number" name="VoksenBadeland" value="0" id="VoksenBadeland" /> <br /> <br /> 
 
             <asp:Label Text="Adgang til badeland (Barn)" runat="server" for="BadelandBarn"/><br />
-            <input type="number" name="BadelandBarn" value="0" /> <br /> <br /> 
+            <asp:TextBox runat="server" type="number" name="BadelandBarn" value="0" ID="BadelandBarn" /> <br /> <br /> 
         </div>
 
         
