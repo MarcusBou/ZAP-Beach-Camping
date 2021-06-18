@@ -222,3 +222,5 @@ C:\Users\marc8847\Documents\GitHub\ZAP-Beach-Camping\Website\ZAP_BEACH_CAMPING\o
 C:\Users\marc8847\Documents\GitHub\ZAP-Beach-Camping\Website\ZAP_BEACH_CAMPING\obj\Debug\ZAP_BEACH_CAMPING.pdb
 C:\Users\dani479g\source\repos\ZAP-Beach-Camping\Website\ZAP_BEACH_CAMPING\bin\ZAP_BeachCamping.dll
 C:\Users\dani479g\source\repos\ZAP-Beach-Camping\Website\ZAP_BEACH_CAMPING\bin\ZAP_BeachCamping.pdb
+C:\Users\marc8847\Documents\GitHub\ZAP-Beach-Camping\Website\ZAP_BEACH_CAMPING\bin\ZAP_BeachCamping.dll
+C:\Users\marc8847\Documents\GitHub\ZAP-Beach-Camping\Website\ZAP_BEACH_CAMPING\bin\ZAP_BeachCamping.pdb
