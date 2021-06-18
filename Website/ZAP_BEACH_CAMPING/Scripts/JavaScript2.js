@@ -9,7 +9,6 @@ function setMinDateOnStartDate() {
     var day = today.getDate();
     var month = today.getMonth() + 1;
     var year = today.getFullYear();
-    
     if (month < 10) {
         month= '0' + month
     }

@@ -69,6 +69,15 @@ namespace ZAP_BEACH_CAMPING
         protected global::System.Web.UI.WebControls.TextBox startDate;
 
         /// <summary>
+        /// startDate2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox startDate2;
+
+        /// <summary>
         /// endDate control.
         /// </summary>
         /// <remarks>
