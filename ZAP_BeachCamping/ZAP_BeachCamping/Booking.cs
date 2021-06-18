@@ -23,20 +23,20 @@ namespace ZAP_BeachCamping
         private int slutrengøring;
         private int hasView;
 
-        public string StatDate { get; private set; }
-        public string EndDate { get; private set; }
-        public string Type { get; private set; }
-        public int Adult { get; private set; }
-        public int Child { get; private set; }
-        public int Dog { get; private set; }
-        public int AdgangBadelandBarn { get; private set; }
-        public int AdgangBadelandVoksen { get; private set; }
-        public int Cykelleje { get; private set; }
-        public int MorgenkompletBarn { get; private set; }
-        public int MorgenkompletVoksen { get; private set; }
-        public int Sengelinned { get; private set; }
-        public int Slutrengøring { get; private set; }
-        public int  HasView { get; private set; }
+        public string StatDate { get { return startDate; } }
+        public string EndDate { get { return endDate; } }
+        public string Type { get { return type; } }
+        public int Adult { get { return adult; } }
+        public int Child { get { return child; } }
+        public int Dog { get { return dog; } }
+        public int AdgangBadelandBarn { get { return adgangBadelandBarn; } }
+        public int AdgangBadelandVoksen { get { return adgangBadelandVoksen; } }
+        public int Cykelleje { get { return cykelleje; } }
+        public int MorgenkompletBarn { get { return morgenkompletBarn; } }
+        public int MorgenkompletVoksen { get { return morgenkompletVoksen; } }
+        public int Sengelinned { get { return sengelinned; } }
+        public int Slutrengøring { get { return slutrengøring; } }
+        public int  HasView { get { return hasView; } }
 
         public Booking(string startDate, string endDate, string type, int adult, int child, int dog, int adgangBadelandBarn, int adgangBadelandVoksen, int cykelleje, int morgenkompletBarn, int morgenkompletVoksen, int sengelinned, int slutrengøring, int hasView)
         {
