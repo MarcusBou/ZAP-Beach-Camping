@@ -21,7 +21,7 @@
             <asp:TextBox runat="server" type="text" name="Adresse" id="Adresse"/><br /><br />
         
             <asp:Label Text="Ankomst Dato" runat="server" for="Ankomst"/><br />
-            <asp:TextBox runat="server" type="date" name="Ankomst" min="2020-06-16" max="2070-1-1-" id="startDate" onBlur="EditMinDateOnEndDate()" onfocus="setMinDateOnStartDate()" /><br /><br />
+            <asp:TextBox runat="server" type="date" name="Ankomst" min="2020-06-16" max="2070-1-1" onBlur="EditMinDateOnEndDate()" onfocus="setMinDateOnStartDate()" ID="startDate"/><br /><br />
 
             <asp:Label Text="Afgangs Dato" runat="server" for="Afgang"/><br />
             <asp:TextBox runat="server" type="date" name="Afgang" min="1970-1-1" max="2070-1-1" id="endDate" /><br /><br />
