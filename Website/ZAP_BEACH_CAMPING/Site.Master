@@ -37,7 +37,7 @@
             </div>
             
             <div class="verticalNavbar col-xs-6">
-                <a class="hover col-xs-12" onclick="showVerticalNavbar()" >
+                <a class="hover col-xs-12" onclick="ShowVerticalNavbar()" >
                     <img src="/Pictures/MenuIcon.png" alt="" class="navMenuIcon">
                 </a>
                 <div id="verticalNavbarOption" class="verticalNavbarOptions">

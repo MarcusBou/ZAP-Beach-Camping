@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Bestil plads" Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="Order.aspx.cs" Inherits="ZAP_BEACH_CAMPING.Order" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <section class="row ayy">
+    <section class="row">
         
         <h1 class="col-sm-12 col-xs-12"> Bestil Plads</h1>
         <div class="col-sm-6 col-xs-12">
@@ -13,23 +13,68 @@
 
             <asp:Label Text="Email" runat="server" for="Email"/><br />
             <asp:TextBox runat="server" type="text" name="Email" id="Email"/><br /><br />
-
+        </div>
+        <div class="col-sm-6 col-xs-12">
             <asp:Label Text="Telefonnummer" runat="server" for="Telefonnummer"/><br />
             <asp:TextBox runat="server" type="number" name="Telefonnummer" id="Telefonnummer" /><br /><br />
 
             <asp:Label Text="Adresse" runat="server" for="Adresse"/><br />
             <asp:TextBox runat="server" type="text" name="Adresse" id="Adresse"/><br /><br />
         
-            <asp:Label Text="Ankomst Dato" runat="server" for="Ankomst"/><br />
-            <asp:TextBox runat="server" type="date" name="Ankomst" min="2020-06-16" max="2070-1-1" onBlur="EditMinDateOnEndDate()" onfocus="setMinDateOnStartDate()" ID="startDate"/><br /><br />
-
-            <asp:Label Text="Afgangs Dato" runat="server" for="Afgang"/><br />
-            <asp:TextBox runat="server" type="date" name="Afgang" min="1970-1-1" max="2070-1-1" id="endDate" /><br /><br />
+            
         </div>
+    </section>
+    <section class="row orderSpotCardSection">
+        <h1 class="col-sm-12 col-xs-12"> Plads Type </h1>
+        <div class="card orderSpotCard col-sm-3">
+            <img src="/Pictures/Camping2.jpg" alt="Alternate Text" class="card-img-top"/>
+            <div class="card-body">
 
+                <h3 class="card-text">Campingplads</h3>
+                <asp:RadioButton runat="server" type="radio" name="typeSelector" GroupName="typeSelector" value="Campingplads" onclick="EditShownAttributes()"/>
+
+            </div>
+        </div>
+        <div class="card orderSpotCard col-sm-3">
+            <img src="/Pictures/Camping2.jpg" alt="Alternate Text" class="card-img-top"/>
+            <div class="card-body">
+
+                <h3 class="card-text">Teltplads</h3>
+                <asp:RadioButton runat="server" type="radio" name="typeSelector" GroupName="typeSelector" Value="Teltplads" onclick="EditShownAttributes()"/>
+
+            </div>
+        </div>
+        <div class="card orderSpotCard col-sm-3">
+            <img src="/Pictures/Camping2.jpg" alt="Alternate Text" class="card-img-top"/>
+            <div class="card-body">
+
+                <h3 class="card-text">Standard Hytte</h3>
+                <asp:RadioButton runat="server" type="radio" name="typeSelector" GroupName="typeSelector" value="Standard Hytte" onclick="EditShownAttributes()"/>
+            </div>
+        </div>
+        <div class="card orderSpotCard col-sm-3">
+            <img src="/Pictures/Camping2.jpg" alt="Alternate Text" class="card-img-top"/>
+            <div class="card-body">
+
+                <h3 class="card-text">Luksus Hytte</h3>
+                <asp:RadioButton runat="server" type="radio" name="typeSelector" GroupName="typeSelector" value="Luksus Hytte" onclick="EditShownAttributes()"/>
+            </div>
+        </div>
+        <div class="card orderSpotCard col-sm-3">
+            <img src="/Pictures/Camping2.jpg" alt="Alternate Text" class="card-img-top"/>
+            <div class="card-body">
+
+                <h3 class="card-text">Sæsonplads</h3>
+                <asp:RadioButton runat="server" type="radio" name="typeSelector" GroupName="typeSelector" value="Sæsonplads" onclick="EditShownAttributes()"/>
+            </div>
+        </div>
+    </section>
+     <section class="row">
         
         <div class="col-sm-6 col-xs-12">
-            <asp:Label Text="Type" runat="server" for="typeSelector"/><br />
+            
+
+            <!--<asp:Label Text="Type" runat="server" for="typeSelector"/><br />
             <asp:DropDownList runat="server" name="Type" ID="typeSelector" onchange="EditShownAttributes()">
                 <asp:ListItem>--</asp:ListItem>
                 <asp:ListItem value="Campingplads" >Campingplads</asp:ListItem>
@@ -37,9 +82,13 @@
                 <asp:ListItem value="Standard Hytte" >Standard Hytte</asp:ListItem>
                 <asp:ListItem value="Luksus Hytte">Luksus Hytte</asp:ListItem>
                 <asp:ListItem value="Sæsonplads" >Sæsonplads</asp:ListItem>
-            </asp:DropDownList><br /><br />
-            <div>
+            </asp:DropDownList><br /><br />-->
+            
+            <asp:Label Text="Ankomst Dato" runat="server" for="Ankomst"/><br />
+            <asp:TextBox runat="server" ID="startDate" type="date" name="Ankomst" min="2020-06-16" max="2070-1-1" onBlur="EditMinDateOnEndDate()" onfocus="setMinDateOnStartDate()" /><br /><br />
 
+            <asp:Label Text="Afgangs Dato" runat="server" for="Afgang"/><br />
+            <asp:TextBox runat="server" type="date" name="Afgang" min="1970-1-1" max="2070-1-1" id="endDate" /><br /><br />
                 <asp:CheckBox Text="Med Udsigt" runat="server" id="Udsigt"/><br />
 
                 <div ID="bigSpotOptions" class="none">
@@ -55,8 +104,8 @@
                     <asp:RadioButton Text="Vinter (1. Oktober - 31. Marts)" GroupName="SeasonSpot" runat="server" /><br />
                     
                 </div>
-            </div>
-
+        </div>
+        <div class="col-sm-6 col-xs-12">
             <asp:Label Text="Antal Voksne" runat="server" for="Voksne"/><br />
             <asp:TextBox runat="server" type="number" name="Voksne" value="0" ID="Voksne"/><br /> <br />
 
