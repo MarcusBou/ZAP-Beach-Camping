@@ -1,6 +1,7 @@
 ﻿:root {
     --black: #666666;
     --green: #32CD32;
+    --lightGray: #DCDCDC;
 }
 .green {
     background-color: var(--green)
@@ -228,8 +229,20 @@ aside > div > img{
     border: none;
     border-radius: 20px;
 }
-
-
+.card{
+    padding:5px;
+    margin:10px;
+    background-color:var(--lightGray);
+    box-shadow: 0 0 10px 2px var(--lightGray);
+}
+.card > img {
+    max-height: 100%;
+    max-width:100%;
+}
+.orderSpotCardSection {
+    max-width: 1000px;
+    margin:auto;
+}
 
 
 .button {
