@@ -71,7 +71,7 @@ function EditShownAttributes() {
     }
 }
 
-//Zeroes choosing
+//Zeroes choosing, to spare on repetetive code
 function typeChoosingChanged() {
     document.getElementById("cabinOptions").style.display = "none";
     document.getElementById("bigSpotOptions").style.display = "none";

@@ -87,6 +87,10 @@ INSERT INTO Attributes VALUES ('Slutrengoring', 150);
 INSERT INTO Attributes VALUES ('Cykelleje', 200);
 INSERT INTO Attributes VALUES ('Adgang til Badeland (Voksen)', 30);
 INSERT INTO Attributes VALUES ('Adgang til Badeland (Barn)', 15);
+INSERT INTO Attributes VALUES ('Forår', 4100);
+INSERT INTO Attributes VALUES ('Sommer', 9300);
+INSERT INTO Attributes VALUES ('Efterår', 2900);
+INSERT INTO Attributes VALUES ('Vinter', 3500);
 
 --Prices splittet by high season or low season
 INSERT INTO Prices VALUES ('Campingvognplads (lille)', 60,50);

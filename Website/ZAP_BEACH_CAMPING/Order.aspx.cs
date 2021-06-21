@@ -35,7 +35,7 @@ namespace ZAP_BEACH_CAMPING
             int voksenMorgenkomplet = Convert.ToInt32(VoksenMorgenkomplet.Text);
             int barnMorgenkomplet = Convert.ToInt32(BarnMorgenkomplet.Text);
             int cykelleje = Convert.ToInt32(Cykelleje.Text);
-            int voksenBadeland = Convert.ToInt32(VoksenBadeland.Text);
+            int voksenBadeland = Convert.ToInt32(VoksenBadeland.Text);  
             int badelandBarn = Convert.ToInt32(BadelandBarn.Text);
             BookingManager bm = new BookingManager();
             bm.BindABookingToCustomer(firstName, lastName, email, address, phoneNumber, StartDate, EndDate, type, adult, child, dog, badelandBarn, voksenBadeland, cykelleje, barnMorgenkomplet, voksenMorgenkomplet, senngelinned, slutrengøring, udsigt);
