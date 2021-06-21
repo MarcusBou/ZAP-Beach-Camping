@@ -77,3 +77,8 @@ function typeChoosingChanged() {
     document.getElementById("bigSpotOptions").style.display = "none";
     document.getElementById("seasonOptions").style.display = "none";
 }
+//Used when the the spot card div is pressed, then the radiobutton in that card will be checked.
+function RadioButtonClick(vvalue) {
+    //Sets the specific element/radiobutton to be checked.
+    document.getElementById("MainContent_" + vvalue).checked = true;
+}
