@@ -26,6 +26,8 @@
     margin:0;
     padding:0;
     font-family:roboto;
+    position:relative;
+    z-index:1;
 }
 body, html {
     width: 100%;
@@ -38,6 +40,7 @@ form{
 }
 main {
     width: 100vw;
+    
 }
 nav, footer{
     background-color: var(--black);
@@ -58,6 +61,7 @@ nav > div {
     align-items: center;
     height: 100%;
     font-size: 20px;
+    
 }
 
 nav > div > a{
@@ -87,18 +91,21 @@ nav .horizontalNavbar{
     position:relative;
     justify-content: center;
     height:100px;
+    overflow:inherit;
 }
-.verticalNavbar .verticalNavbarOptions{
-    height:150px;
-    width:300px;
+.verticalNavbarOptions{
+    height:75px;
+  
     text-align: center;
     background-color: var(--black);
-    margin-top:100px;
-    
+    padding-top:10px;
+    display:none;
+
 }
-.verticalNavbar .verticalNavbarOptions .navButton{
+.verticalNavbarOptions .navButton{
     height:50px;
-    width:200px;
+    padding:0 10px 0 10px;
+    max-width:200px;
     border-radius:0.5vh;
     border-width:0;
     
@@ -122,15 +129,19 @@ nav .navMenuIcon{
 }
 
 
-@media (max-width:750px){
-    .verticalNavbar{
-        display:inline;
+@media (max-width:750px) {
+    .verticalNavbar {
+        display: inline;
     }
-    .horizontalNavbar{
-        display:none;
+
+    .horizontalNavbar {
+        display: none;
     }
-    .verticalNavbarOptions{
-        display:none;
+
+}
+@media (min-width: 600px) {
+    .verticalNavbarOptions {
+        display: none;
     }
 }
 footer {
@@ -196,7 +207,7 @@ section > div {
     max-height: 500px;
     max-width: 500px;
     overflow: hidden;
-    
+    margin-right:50px;
 }
 section > .picture {
     box-shadow: 0 0 100px -9px grey;
@@ -209,6 +220,7 @@ section > .picture > img {
 
 aside{
     max-width:500px;
+    margin-right:50px;
 }
 aside > div{
     margin:20px;
