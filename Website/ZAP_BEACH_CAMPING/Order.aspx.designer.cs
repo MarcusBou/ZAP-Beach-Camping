@@ -60,6 +60,15 @@ namespace ZAP_BEACH_CAMPING
         protected global::System.Web.UI.WebControls.TextBox Adresse;
 
         /// <summary>
+        /// CampingpladsOption control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton CampingpladsOption;
+
+        /// <summary>
         /// typeSelector control.
         /// </summary>
         /// <remarks>

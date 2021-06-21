@@ -26,12 +26,13 @@
     </section>
     <section class="row orderSpotCardSection">
         <h1 class="col-sm-12 col-xs-12"> Plads Type </h1>
+        
         <div class="card orderSpotCard col-sm-3">
             <img src="/Pictures/Camping2.jpg" alt="Alternate Text" class="card-img-top"/>
             <div class="card-body">
 
                 <h3 class="card-text">Campingplads</h3>
-                <asp:RadioButton runat="server" type="radio" name="typeSelector" GroupName="typeSelector" value="Campingplads" onclick="EditShownAttributes()"/>
+                <asp:RadioButton runat="server" id="CampingpladsOption" type="radio" name="typeSelector" GroupName="typeSelector" value="Campingplads" onclick="EditShownAttributes()"/>
 
             </div>
         </div>

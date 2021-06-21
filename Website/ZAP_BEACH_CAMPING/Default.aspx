@@ -19,16 +19,16 @@
             </div>
 
             <div class="col-md-5 col-12 picture ">
-                <img src="\Pictures\Camping2.jpg" alt="Alternate Text" class="imgg landscape" />
+                <img src="\Pictures\Camping2.jpg" alt="Alternate Text" class=" landscape" />
             </div>
             
         </section>
         <section class="row">
             <h1 class="col-sm-12">Bestil Plads</h1>
-            <div class="col-md-5 col-12 picture">
+            <div class="col-md-5 col-11 picture">
                 <img src="/Pictures/Camping3.jpg" alt="Vores CampingPlads" />
             </div>
-            <div class="col-md-5 col-12">
+            <div class="col-md-5 col-11">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget lorem nulla. Duis in nibh non lorem pellentesque auctor eu sit amet mi. Aliquam interdum at nisl vel dignissim. Nullam mi mi, blandit ut lectus ac, tempor luctus urna. Vestibulum ultricies, erat at faucibus sodales, enim ex vehicula sapien, in scelerisque neque leo eu metus. Suspendisse accumsan sed metus a sagittis. Cras commodo nulla at dui aliquam, vitae luctus quam blandit. Vestibulum posuere arcu eros, ut ultrices ex bibendum at. Nullam justo turpis, tincidunt sit amet ipsum non, mollis egestas quam. Aenean turpis ex, mollis eu nunc sed, gravida placerat risus. Cras vitae massa iaculis, consequat metus quis, ornare felis.</p>
                  <asp:Button Text="Bestil Plads" runat="server" class="green button right hover" onclick="redirectOrder"/>
             </div>
