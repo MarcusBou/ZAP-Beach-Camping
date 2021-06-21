@@ -48,26 +48,21 @@ function EditShownAttributes() {
             switch (radioButton.value) {
                 case "Campingplads":
                     typeChoosingChanged();
-                    UncheckBoxes();
                     document.getElementById("bigSpotOptions").style.display = "block";
                     break;
                 case "Teltplads":
                     typeChoosingChanged();
-                    UncheckBoxes();
                     break;
                 case "Standard Hytte":
-                    typeChoosingChanged();
-                    UncheckBoxes();
+                    typeChoosingChanged()
                     document.getElementById("cabinOptions").style.display = "block";
                     break;
                 case "Luksus Hytte":
                     typeChoosingChanged();
-                    UncheckBoxes();
                     document.getElementById("cabinOptions").style.display = "block";
                     break;
                 case "Sæsonplads":
                     typeChoosingChanged();
-                    UncheckBoxes();
                     document.getElementById("bigSpotOptions").style.display = "block";
                     document.getElementById("seasonOptions").style.display = "block";
                     break;
@@ -75,6 +70,7 @@ function EditShownAttributes() {
         }
     }
 }
+
 //Zeroes choosing
 function typeChoosingChanged() {
     document.getElementById("cabinOptions").style.display = "none";

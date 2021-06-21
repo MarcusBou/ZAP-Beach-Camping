@@ -41,7 +41,7 @@
 
                 <h3 class="card-text">Teltplads</h3>
                 <asp:RadioButton runat="server" type="radio" name="typeSelector" GroupName="typeSelector" Value="Teltplads" onclick="EditShownAttributes()"/>
-
+                
             </div>
         </div>
         <div class="card orderSpotCard col-sm-3">
@@ -89,6 +89,7 @@
 
             <asp:Label Text="Afgangs Dato" runat="server" for="Afgang"/><br />
             <asp:TextBox runat="server" type="date" name="Afgang" min="1970-1-1" max="2070-1-1" id="endDate" /><br /><br />
+
                 <asp:CheckBox Text="Med Udsigt" runat="server" id="Udsigt"/><br />
 
                 <div ID="bigSpotOptions" class="none">
