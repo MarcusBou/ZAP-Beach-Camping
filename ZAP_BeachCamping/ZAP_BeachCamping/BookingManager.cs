@@ -30,5 +30,6 @@ namespace ZAP_BeachCamping
             Booking booking = CreateBooking(startDate, endDate, type, adult, child, dog, adgangBadelandBarn, adgangBadelandVoksen, cykelleje, morgenkompletBarn, morgenkompletVoksen, sengelinned, slutrengøring, hasView);
             SQLconn.AddNewBookings(customer.FirstName, customer.LastName, customer.Email, customer.PhoneNum, customer.Address, booking.StatDate, booking.EndDate, booking.Type, booking.Adult, booking.Child, booking.Dog, booking.AdgangBadelandBarn, booking.AdgangBadelandVoksen, booking.AdgangBadelandVoksen, booking.MorgenkompletBarn, booking.MorgenkompletVoksen, booking.Sengelinned, booking.Slutrengøring, booking.HasView);
         }
+        
     }
 }

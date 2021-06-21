@@ -64,5 +64,42 @@ namespace ZAP_BeachCamping
             cmd.ExecuteNonQuery();//Executes query
             OpenOrCloseConn(false);//Close Connection
         }
+        public Dictionary<string, int> GetAllPrices()
+        {
+            Dictionary<string, int> prices = new Dictionary<string, int>();//The Dictionary that is used to store the prices in.
+
+            SqlCommand cmd1 = new SqlCommand("GetAllPricesFromPrices", conn);//Sets which command is used
+            cmd1.CommandType = System.Data.CommandType.StoredProcedure;//Sets the Command type to StoredProcedure
+            SqlCommand cmd2 = new SqlCommand("GetAllPricesFromAttributes", conn);//Sets which command is used
+            cmd2.CommandType = System.Data.CommandType.StoredProcedure;//Sets the Command type to StoredProcedure
+            OpenOrCloseConn(true);//opens connection
+            SqlDataReader reader1 = cmd1.ExecuteReader();//Executes query
+            
+            while (reader1.Read())
+            {
+                for (int i = 1; i <= 2; i++)//Loops through each row twice to add both a low and high season
+                {
+                    if (i == 1)//Index 1 in the row equals to the low season 
+                    {
+                        prices.Add(reader1[0] + "Low", Convert.ToInt32(reader1[i]));
+                    }
+                    else if (i == 2)//Index 2 equals to the high season
+                    {
+                        prices.Add(reader1[0] + "High", Convert.ToInt32(reader1[i]));
+                    }
+                }
+            }
+            reader1.Close();
+
+            SqlDataReader reader2 = cmd2.ExecuteReader();
+            while (reader2.Read())
+            {
+                prices.Add(reader2[0].ToString(), Convert.ToInt32(reader2[1]));
+            }
+            reader2.Close();
+
+            OpenOrCloseConn(false);//Closes Connection
+            return prices; //Retuns the SqlDataReader
+        }
     }
 }

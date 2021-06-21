@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="Bestil plads" Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="Order.aspx.cs" Inherits="ZAP_BEACH_CAMPING.Order" %>
 
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server" onChange="CalculatePrice">
     <section class="row">
         
         <h1 class="col-sm-12 col-xs-12"> Bestil Plads</h1>
@@ -32,6 +32,9 @@
             <div class="card-body">
 
                 <h3 class="card-text">Campingplads</h3>
+                <h5 class="card-text"> m/ strøm</h5>
+                <h6 class="card-text">Højsæson pris: 60,-</h6>
+                <h6 class="card-text">Lavsæson pris: 50,-</h6>
                 <asp:RadioButton runat="server" id="CampingpladsOption" type="radio" name="typeSelector" GroupName="typeSelector" value="Campingplads" onclick="EditShownAttributes()"/>
 
             </div>
@@ -41,6 +44,9 @@
             <div class="card-body">
 
                 <h3 class="card-text">Teltplads</h3>
+                <h5 class="card-text"> m/ strøm</h5>
+                <h6 class="card-text">Højsæson pris: 35,-</h6>
+                <h6 class="card-text">Lavsæson pris: 45,-</h6>
                 <asp:RadioButton runat="server" type="radio" name="typeSelector" GroupName="typeSelector" Value="Teltplads" onclick="EditShownAttributes()"/>
                 
             </div>
@@ -50,6 +56,9 @@
             <div class="card-body">
 
                 <h3 class="card-text">Standard Hytte</h3>
+                <h5 class="card-text">4 pers. m/ strøm</h5>
+                <h6 class="card-text">Højsæson pris: 500,-</h6>
+                <h6 class="card-text">Lavsæson pris: 350,-</h6>
                 <asp:RadioButton runat="server" type="radio" name="typeSelector" GroupName="typeSelector" value="Standard Hytte" onclick="EditShownAttributes()"/>
             </div>
         </div>
@@ -58,6 +67,9 @@
             <div class="card-body">
 
                 <h3 class="card-text">Luksus Hytte</h3>
+                <h5 class="card-text">4-6 pers. m/ strøm</h5>
+                <h6 class="card-text">Højsæson pris: 850,-</h6>
+                <h6 class="card-text">Lavsæson pris: 600,-</h6>
                 <asp:RadioButton runat="server" type="radio" name="typeSelector" GroupName="typeSelector" value="Luksus Hytte" onclick="EditShownAttributes()"/>
             </div>
         </div>
@@ -66,6 +78,7 @@
             <div class="card-body">
 
                 <h3 class="card-text">Sæsonplads</h3>
+                    <h6 class="lightGray">* For all sæsonpladser er gebyr pr. person inkluderet, ligeledes afregnes strøm separat med 3,75,- DKK/KWh</h6>
                 <asp:RadioButton runat="server" type="radio" name="typeSelector" GroupName="typeSelector" value="Sæsonplads" onclick="EditShownAttributes()"/>
             </div>
         </div>
@@ -104,7 +117,6 @@
                     <asp:RadioButton Text="Sommer (1. april - 30. september)" GroupName="SeasonSpot" runat="server" /><br />
                     <asp:RadioButton Text="Efterår (15. August - 31. Oktober)" GroupName="SeasonSpot" runat="server" /><br />
                     <asp:RadioButton Text="Vinter (1. Oktober - 31. Marts)" GroupName="SeasonSpot" runat="server" /><br />
-                    
                 </div>
         </div>
         <div class="col-sm-6 col-xs-12">
@@ -151,7 +163,7 @@
             <h1>Pris i alt: <asp:Label Text="0.0" runat="server" id="TotalPrice"/> DKK</h1>
         </div>
         <div class="col-md-6">
-            <asp:Button  Text="Bestil Plads" runat="server" OnClick="OrderSpot" CssClass="orderButton green hover"/>
+            <asp:Button  Text="Bestil Plads" runat="server" OnClick="CalculatePrice" CssClass="orderButton green hover"/>
         </div>
     </section>
 </asp:Content>

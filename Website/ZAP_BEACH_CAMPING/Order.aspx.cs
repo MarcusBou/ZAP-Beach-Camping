@@ -41,5 +41,12 @@ namespace ZAP_BEACH_CAMPING
             bm.BindABookingToCustomer(firstName, lastName, email, address, phoneNumber, StartDate, EndDate, type, adult, child, dog, badelandBarn, voksenBadeland, cykelleje, barnMorgenkomplet, voksenMorgenkomplet, senngelinned, slutrengøring, udsigt);
 
         }
+        protected void CalculatePrice(object sender, EventArgs e)
+        {
+            SQLManager sQLManager = new SQLManager();
+            Dictionary<string, int> prices = sQLManager.GetAllPrices();
+            
+            
+        }
     }
 }
