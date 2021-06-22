@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net;
+using System.Net.Mail;
+
 
 namespace ZAP_BeachCamping
 {
@@ -12,7 +15,43 @@ namespace ZAP_BeachCamping
 
         public void SendReturnMail()
         {
+            SmtpClient client = new SmtpClient("smtp.gmail.com");
+            //Sets the pot the mail is goning to be send through.
+            client.Port = 587;
 
+            //Makes the connection use sll to ecrypt the connection.
+            client.EnableSsl = true;
+            //Sets the credentials to the gmail account.
+            client.Credentials = new NetworkCredential("ZAPBeachCampingDK@gmail.com", "ZAPPassw0rd!");
+            //Sets the sender, recipient, subject and body. 
+
+
+            //Determens the the account that will be sending the message and to account that will be reciving the message.
+            MailMessage msg = new MailMessage("ZAPBeachCampingDK@gmail.com", "daniel.vuust@gmail.com");
+            //Sets the subject of the mail.
+            msg.Subject = "ZAP Beach Camping Ordreberæftelse";
+            //Sets the body to be html syntax.
+            msg.IsBodyHtml = true;
+            //Sets the body of the mail.
+            msg.Body = "" +
+                "<h1>Din ordre hos ZAP Beach Camping er nu bekræftet</h1>" +
+                "<h2>Du har bestilt plads nummer {spotID} fra {startDate} til {endDate}</h2>" +
+                "<h3>Persongebyr i alt: {persongebyr} </h3> " +
+                "<h3>Pladsgebyr i alt: {pladsgebyr} </h3>" +
+                "<h3>Tilbud i alt: {tilbud}</h3>" +
+                "<h1>Pris i alt: {price}</h1>";
+
+            //Replases text in the body to the right data.
+            msg.Body = msg.Body.Replace("{spotID}", "ayy");
+            msg.Body = msg.Body.Replace("{startDate}", "ayy");
+            msg.Body = msg.Body.Replace("{endDate}", "ayy");
+            msg.Body = msg.Body.Replace("{persongebyr}", "ayy");
+            msg.Body = msg.Body.Replace("{pladsgebyr}", "ayy");
+            msg.Body = msg.Body.Replace("{tilbud}", "ayy");
+            msg.Body = msg.Body.Replace("{price}", "ayy");
+
+            //Sends the msg using googles smtp server.
+            client.Send(msg);
         }
         public Customer CreateCustomer(string firstName, string lastName, string email, string address, string phoneNum)
         {
