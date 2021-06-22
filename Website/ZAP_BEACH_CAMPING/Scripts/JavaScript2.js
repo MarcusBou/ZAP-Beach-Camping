@@ -81,4 +81,5 @@ function typeChoosingChanged() {
 function RadioButtonClick(vvalue) {
     //Sets the specific element/radiobutton to be checked.
     document.getElementById("MainContent_" + vvalue).checked = true;
+    EditShownAttributes();
 }
