@@ -27,7 +27,7 @@
     <section class="row orderSpotCardSection">
         <h1 class="col-sm-12 col-xs-12"> Plads Type </h1>
         
-        <div class="card orderSpotCard col-sm-3" onclick="RadioButtonClick('Campingplads')">
+        <div class="card orderSpotCard col-sm-3" onclick="CalculatePrice();">
             <img src="/Pictures/Camping2.jpg" alt="Alternate Text" class="card-img-top" />
             <div class="card-body">
 
@@ -163,7 +163,7 @@
             <h1>Pris i alt: <asp:Label Text="0.0" runat="server" id="TotalPrice"/> DKK</h1>
         </div>
         <div class="col-md-6">
-            <asp:Button  Text="Bestil Plads" runat="server" CssClass="orderButton green hover" OnCientClick="RadioButtonClick()"/>
+            <asp:Button  Text="Bestil Plads" runat="server" CssClass="orderButton green hover" OnCientClick="OrderSpot()"/>
         </div>
     </section>
 </asp:Content>

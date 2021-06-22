@@ -12,7 +12,7 @@ namespace ZAP_BEACH_CAMPING
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+           
         }
 
         protected void OrderSpot(object sender, EventArgs e)
@@ -43,9 +43,9 @@ namespace ZAP_BEACH_CAMPING
         }
         protected void CalculatePrice(object sender, EventArgs e)
         {
-            SQLManager sQLManager = new SQLManager();
-            Dictionary<string, int> prices = sQLManager.GetAllPrices();
+            Efternavn.Text = "test";
             
+           
             
         }
     }
