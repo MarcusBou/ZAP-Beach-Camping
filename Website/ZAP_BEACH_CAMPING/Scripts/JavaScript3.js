@@ -38,7 +38,6 @@ function ShowVerticalNavbar() {
 }
 
 function EditShownAttributes() {
-    console.log("yo");
     //Gets all of the radiobutton in an array.
     var radioButtons = document.getElementsByName("ctl00$MainContent$typeSelector"); 
     //Loops through all of the radiobuttons.
@@ -82,4 +81,9 @@ function RadioButtonClick(vvalue) {
     //Sets the specific element/radiobutton to be checked.
     document.getElementById("MainContent_" + vvalue).checked = true;
     EditShownAttributes();
+}
+function jsCalculatePrices() {
+    console.log("yo");
+    console.log(document.getElementById('MainContent_CalculatePriceID'));
+    document.getElementById('MainContent_CalculatePriceID').click();
 }

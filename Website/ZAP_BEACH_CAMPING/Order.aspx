@@ -121,7 +121,7 @@
         </div>
         <div class="col-sm-6 col-xs-12">
             <asp:Label Text="Antal Voksne" runat="server" for="Voksne"/><br />
-            <asp:TextBox runat="server" type="number" name="Voksne" value="0" ID="Voksne"/><br /> <br />
+            <asp:TextBox runat="server" type="number" name="Voksne" value="0" ID="Voksne" onBlur="jsCalculatePrices()"/><br /> <br />
 
             <asp:Label Text="Antal Børn" runat="server" for="Børn"/><br />
             <asp:TextBox runat="server" type="number" name="Børn" value="0" id="Børn"/><br /> <br />
@@ -166,4 +166,5 @@
             <asp:Button  Text="Bestil Plads" runat="server" CssClass="orderButton green hover" OnCientClick="OrderSpot()"/>
         </div>
     </section>
+    <Button Text="text" runat="server" ID="CalculatePriceID" OnClick="return CalculatePrice" autopostback="false" />
 </asp:Content>
