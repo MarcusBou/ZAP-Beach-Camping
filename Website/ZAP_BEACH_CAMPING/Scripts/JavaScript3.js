@@ -1,4 +1,9 @@
-﻿///Sets the min value of the endDate input to the picked date in startDate.
+﻿var staticPrices;
+var periodPrices;
+
+
+
+///Sets the min value of the endDate input to the picked date in startDate.
 function EditMinDateOnEndDate() {
     //Gets the date that is picked in the starDate input.
     var startDate = document.getElementById("MainContent_startDate").value;
@@ -81,9 +86,4 @@ function RadioButtonClick(vvalue) {
     //Sets the specific element/radiobutton to be checked.
     document.getElementById("MainContent_" + vvalue).checked = true;
     EditShownAttributes();
-}
-function jsCalculatePrices() {
-    console.log("yo");
-    console.log(document.getElementById('MainContent_CalculatePriceID'));
-    document.getElementById('MainContent_CalculatePriceID').click();
 }

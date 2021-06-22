@@ -64,6 +64,7 @@ namespace ZAP_BeachCamping
             cmd.ExecuteNonQuery();//Executes query
             OpenOrCloseConn(false);//Close Connection
         }
+
         public Dictionary<string, int> GetAllPrices()
         {
             Dictionary<string, int> prices = new Dictionary<string, int>();//The Dictionary that is used to store the prices in.

@@ -4,15 +4,26 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Script.Serialization;
 using ZAP_BeachCamping;
 
 namespace ZAP_BEACH_CAMPING
 {
     public partial class Order : System.Web.UI.Page
     {
+        private double currPrice , addOnPrices, PeoplePrices;
+        private SQLManager sql = new SQLManager();
+        private Dictionary<string, int> pricesDict = new Dictionary<string, int>();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            currPrice = 0;
+            addOnPrices = 0;
+            PeoplePrices = 0;
+            foreach (var item in sql.GetAllPrices())
+            {
+                pricesDict.Add(item.Key, item.Value);
+            }
         }
 
         protected void OrderSpot(object sender, EventArgs e)
@@ -41,12 +52,17 @@ namespace ZAP_BEACH_CAMPING
             bm.BindABookingToCustomer(firstName, lastName, email, address, phoneNumber, StartDate, EndDate, type, adult, child, dog, badelandBarn, voksenBadeland, cykelleje, barnMorgenkomplet, voksenMorgenkomplet, senngelinned, slutrengøring, udsigt);
 
         }
-        protected bool CalculatePrice(object sender, EventArgs e)
+
+        protected void onEventChange(object sender, EventArgs e)
         {
-            Efternavn.Text = "test";
-            Console.Write("yoooo");
-            return false;
-            
+            Console.WriteLine("FUCK");
+            calcPrice(100);
+        }
+
+        protected void calcPrice(double newAddOn)
+        {
+            currPrice = currPrice + 100;
+            TotalPrice.Text = currPrice.ToString();
         }
     }
 }

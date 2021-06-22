@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="Bestil plads" Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="Order.aspx.cs" Inherits="ZAP_BEACH_CAMPING.Order" %>
 
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server" onChange="CalculatePrice">
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <section class="row">
         
         <h1 class="col-sm-12 col-xs-12"> Bestil Plads</h1>
@@ -121,7 +121,7 @@
         </div>
         <div class="col-sm-6 col-xs-12">
             <asp:Label Text="Antal Voksne" runat="server" for="Voksne"/><br />
-            <asp:TextBox runat="server" type="number" name="Voksne" value="0" ID="Voksne" onBlur="jsCalculatePrices()"/><br /> <br />
+            <asp:TextBox runat="server" type="number" name="Voksne" value="0" ID="Voksne" onTextChange="onEventChange()"/><br /> <br />
 
             <asp:Label Text="Antal Børn" runat="server" for="Børn"/><br />
             <asp:TextBox runat="server" type="number" name="Børn" value="0" id="Børn"/><br /> <br />
