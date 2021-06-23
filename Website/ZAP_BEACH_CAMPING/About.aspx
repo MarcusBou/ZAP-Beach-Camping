@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Om ZAP Beach Camping" Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="About.aspx.cs" Inherits="ZAP_BEACH_CAMPING.About" %>
+﻿s<%@ Page Title="Om ZAP Beach Camping" Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="About.aspx.cs" Inherits="ZAP_BEACH_CAMPING.About" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <section class="row">
