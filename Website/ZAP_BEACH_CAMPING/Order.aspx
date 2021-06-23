@@ -121,7 +121,7 @@
         </div>
         <div class="col-sm-6 col-xs-12">
             <asp:Label Text="Antal Voksne" runat="server" for="Voksne"/><br />
-            <asp:TextBox runat="server" type="number" name="Voksne" value="0" ID="Voksne" onTextChange="onEventChange()"/><br /> <br />
+            <asp:TextBox runat="server" type="number" name="Voksne" value="0" ID="Voksne" onTextChange="CalculatePrice('Voksne')" onBlue="CalculatePrice()"/><br /> <br />
 
             <asp:Label Text="Antal Børn" runat="server" for="Børn"/><br />
             <asp:TextBox runat="server" type="number" name="Børn" value="0" id="Børn"/><br /> <br />
@@ -157,10 +157,11 @@
     </section>
     <section class="row">
         <div class="col-md-6">
-            <h4>Pladsgebyr i alt: <asp:Label Text="0.0" runat="server" id="TotalSpotFee"/> DKK</h4>
-            <h4>Peronsgebyr i alt: <asp:Label Text="0.0" runat="server" id="TotalPersonalFee"/> DKK</h4>
-            <h4>Tilbud i alt: <asp:Label Text="0.0" runat="server" id="TotalDiscount"/> DKK</h4>
-            <h1>Pris i alt: <asp:Label Text="0.0" runat="server" id="TotalPrice"/> DKK</h1>
+            <h4>Pladsgebyr i alt: <asp:Label Text="0" runat="server" id="TotalSpotFee"/>,00 DKK</h4>
+            <h4>Peronsgebyr i alt: <asp:Label Text="0" runat="server" id="TotalPersonalFee"/>,00 DKK</h4>
+            <h4>Tillæg i alt: <asp:Label Text="0" runat="server" id="TotalAddOnFee"/>,00 DKK</h4>
+            <h4>Tilbud i alt: <asp:Label Text="0" runat="server" id="TotalDiscount"/>,00 DKK</h4>
+            <h1>Pris i alt: <asp:Label Text="0" runat="server" id="TotalPrice"/>,00 DKK</h1>
         </div>
         <div class="col-md-6">
             <asp:Button  Text="Bestil Plads" runat="server" CssClass="orderButton green hover" OnCientClick="OrderSpot()"/>
