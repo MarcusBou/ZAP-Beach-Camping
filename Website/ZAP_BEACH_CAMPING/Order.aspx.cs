@@ -52,17 +52,5 @@ namespace ZAP_BEACH_CAMPING
             bm.BindABookingToCustomer(firstName, lastName, email, address, phoneNumber, StartDate, EndDate, type, adult, child, dog, badelandBarn, voksenBadeland, cykelleje, barnMorgenkomplet, voksenMorgenkomplet, senngelinned, slutrengøring, udsigt);
 
         }
-
-        protected void onEventChange(object sender, EventArgs e)
-        {
-            Console.WriteLine("FUCK");
-            calcPrice(100);
-        }
-
-        protected void calcPrice(double newAddOn)
-        {
-            currPrice = currPrice + 100;
-            TotalPrice.Text = currPrice.ToString();
-        }
     }
 }

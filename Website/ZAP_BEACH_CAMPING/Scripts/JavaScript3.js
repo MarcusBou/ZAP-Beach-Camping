@@ -1,9 +1,4 @@
-﻿var staticPrices;
-var periodPrices;
-
-
-
-///Sets the min value of the endDate input to the picked date in startDate.
+﻿///Sets the min value of the endDate input to the picked date in startDate.
 function EditMinDateOnEndDate() {
     //Gets the date that is picked in the starDate input.
     var startDate = document.getElementById("MainContent_startDate").value;
