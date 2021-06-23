@@ -13,7 +13,7 @@ namespace ZAP_BeachCamping
     {
         private SQLManager SQLconn = new SQLManager();
 
-        public void SendReturnMail()
+        public void SendReturnMail(int spotID, string startDate, string endDate, int persongebyr, int pladsgebyr, int tilbud, int price)
         {
             SmtpClient client = new SmtpClient("smtp.gmail.com");
             //Sets the pot the mail is goning to be send through.
@@ -41,14 +41,15 @@ namespace ZAP_BeachCamping
                 "<h3>Tilbud i alt: {tilbud}</h3>" +
                 "<h1>Pris i alt: {price}</h1>";
 
-            //Replases text in the body to the right data.
-            msg.Body = msg.Body.Replace("{spotID}", "ayy");
-            msg.Body = msg.Body.Replace("{startDate}", "ayy");
-            msg.Body = msg.Body.Replace("{endDate}", "ayy");
-            msg.Body = msg.Body.Replace("{persongebyr}", "ayy");
-            msg.Body = msg.Body.Replace("{pladsgebyr}", "ayy");
-            msg.Body = msg.Body.Replace("{tilbud}", "ayy");
-            msg.Body = msg.Body.Replace("{price}", "ayy");
+            //Replases text in the body to customer data.
+            msg.Body = msg.Body.Replace("{spotID}", spotID.ToString());
+            msg.Body = msg.Body.Replace("{startDate}", startDate);
+            msg.Body = msg.Body.Replace("{endDate}", endDate);
+            msg.Body = msg.Body.Replace("{persongebyr}", persongebyr.ToString());
+            msg.Body = msg.Body.Replace("{pladsgebyr}", pladsgebyr.ToString());
+            msg.Body = msg.Body.Replace("{tilbud}", tilbud.ToString());
+            msg.Body = msg.Body.Replace("{price}", price.ToString());
+            ;
 
             //Sends the msg using googles smtp server.
             client.Send(msg);
