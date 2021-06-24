@@ -4,13 +4,8 @@ function EditMinDateOnEndDate() {
     var startDate = document.getElementById("MainContent_startDate").value;
     //Sets the min date to the picked date in startDate.
     document.getElementById("MainContent_endDate").setAttribute("min", startDate);
+
     
-    if (document.getElementById('MainContent_discountCampaigne').checked) {
-        var newDate = new Date(startDate)
-        newDate = addDays(newDate, 20);
-        console.log(ConvertDateFormat(newDate));
-        document.getElementById('MainContent_endDate').value = ConvertDateFormat(newDate);
-    }
 }
 function setMinDateOnStartDate() {
     var todaysDate = ConvertDateFormat(new Date());
@@ -18,7 +13,6 @@ function setMinDateOnStartDate() {
     document.getElementById("MainContent_startDate").setAttribute("min", todaysDate);
 }
 function ConvertDateFormat(today) {
-    console.log(today+'ayyy');
     var day = today.getDate();
     var month = today.getMonth() + 1;
     var year = today.getFullYear();
@@ -168,12 +162,11 @@ var højsæsonSlut = new Date(2000, 7, 15);
 
 
 function CalculateTotalPrice() {
-    console.log('ayy');
+    
     var totalSpotFee = 0;
     var totalPersonalFee = 0;
     var totalAddOnFee = 0;
     var totalDiscount = 0;
-    var totalPrice = 0;
 
     //The daysOnCamping is used to check if the four day discount is accomplished
     var daysOnCamping = 1;
@@ -202,9 +195,10 @@ function CalculateTotalPrice() {
         //Chceks if a spotType has been selected or not and runs the function if a spotType has been selected.
         if (spotType != null && !FourDayDiscountIsAccomplished(daysOnCamping)) {
             totalSpotFee += CalculateSpotFee(HighOrLowSeason(startDate))
+            console.log('yoo');
         }
         //Gets the totalSpotFee per day.
-        else {
+        else if (spotType !=null) {
             totalDiscount += CalculateSpotFee(HighOrLowSeason(startDate));
         }
         //Calculates the total personal fee.
@@ -212,7 +206,7 @@ function CalculateTotalPrice() {
         daysOnCamping++;
         startDate.setDate(startDate.getDate() + 1);
     }
-    SetPriceLabels(totalSpotFee, totalPersonalFee, totalAddOnFee, totalDiscount, totalDiscount, totalPrice);
+    SetPriceLabels(totalSpotFee, totalPersonalFee, totalAddOnFee, totalDiscount, totalDiscount);
 }
 function CalculateAddOnFee() {
     var totalAddOnFee = 0;
@@ -267,7 +261,7 @@ function CalculateSpotFee(highOrLowSeason) {
     var totalSpotFee = 0;
 
     //Checks if the specific date is in the highseason or not.
-    if (highOrLowSeason && spotType == null) {
+    if (highOrLowSeason) {
 
         //Adds total cost depeding on what type of spot is selected.
         switch (spotType.value) {
@@ -353,9 +347,35 @@ function FourDayDiscountIsAccomplished(daysOnCamping) {
     return false;
 }
 function DiscountCampaign() {
-    document.getElementById('MainContent_endDate').disabled = false;
+    
+    //If the special campaign is selected then the enddate will always be one week in the future.
+    if (document.getElementById('MainContent_discountCampaigne').checked) {
+        //Locks the end date so the enddate always will be one week in the future.
+        document.getElementById('MainContent_endDate').disabled = true;
+        var startDate = document.getElementById('MainContent_startDate').value;
+        var newDate = new Date(startDate)
+        newDate = addDays(newDate, 7);
+        document.getElementById('MainContent_endDate').value = ConvertDateFormat(newDate);
+
+        //Sets the max persons to 4.
+        var adults = document.getElementById('MainContent_Voksne');
+        var childen = document.getElementById('MainContent_Børn');
+        adults.max = (4- childen.value).toString();
+        childen.max = (4 - adults.value).toString();
+
+        //Sets access to the waterpark determent on the persons.
+        document.getElementById('MainContent_VoksenBadeland').value = adults.value * 7;
+        document.getElementById('MainContent_BadelandBarn').value = childen.value * 7;
+
+        document.getElementById('MainContent_VoksenMorgenkomplet').value = adults.value * 6;
+        document.getElementById('MainContent_BarnMorgenkomplet').value = childen.value * 6;
+
+        SetPriceLabels(1099, 0, 0, 0, 0);
+    }
+    
 }
-function SetPriceLabels(totalSpotFee, totalPersonalFee, totalAddOnFee, totalDiscount, totalDiscount, totalPrice) {
+
+function SetPriceLabels(totalSpotFee, totalPersonalFee, totalAddOnFee, totalDiscount, totalDiscount) {
     //Displays all of the diferent prices on the page.
     totalPrice = totalSpotFee + totalPersonalFee + totalAddOnFee - totalDiscount;
     document.getElementById('MainContent_TotalSpotFee').innerHTML = totalSpotFee;

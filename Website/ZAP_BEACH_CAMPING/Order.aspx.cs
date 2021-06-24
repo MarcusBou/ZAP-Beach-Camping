@@ -35,7 +35,9 @@ namespace ZAP_BEACH_CAMPING
             string address = Adresse.Text;
             string StartDate = startDate.Text;
             string EndDate = endDate.Text;
-            string type = "Teltplads";
+
+            string type = "";
+            //Sets the type to the radiobutton htat is selected.
             if (Teltplads.Checked == true){
                 type = "Teltplads";
             }
@@ -49,7 +51,8 @@ namespace ZAP_BEACH_CAMPING
                 type = "Sæsonplads";
             }
             else if (Campingplads.Checked == true){
-                if (Udsigt.Checked)
+                //
+                if (BigSpot.Checked)
                 {
                     type = "Campingvognplads (Stor)";
                 }
