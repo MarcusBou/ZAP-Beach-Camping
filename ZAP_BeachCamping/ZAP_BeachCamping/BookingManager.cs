@@ -34,13 +34,16 @@ namespace ZAP_BeachCamping
             msg.IsBodyHtml = true;
             //Sets the body of the mail.
             msg.Body = "" +
-                "<h1>Din ordre hos ZAP Beach Camping er nu bekræftet</h1>" +
-                "<h2>Du har bestilt plads hos ZAP Beach Camping fra {startDate} til {endDate}</h2>" +
-                "<h3>Persongebyr i alt: {persongebyr} </h3> " +
-                "<h3>Pladsgebyr i alt: {pladsgebyr} </h3>" +
-                "<h3>Tillæg i alt: {addOns} </h3>" +
-                "<h3>Tilbud i alt: -{tilbud}</h3>" +
-                "<h1>Pris i alt: {price}</h1>";
+                "<p>Din ordre hos ZAP Beach Camping er nu bekræftet</p>" +
+                "<hp>Du har bestilt plads hos ZAP Beach Camping fra {startDate} til {endDate}</p>" +
+                "<ul>"+
+                    "<li>Persongebyr i alt: {persongebyr} </li> " +
+                    "<li>Pladsgebyr i alt: {pladsgebyr} </li>" +
+                    "<li>Tillæg i alt: {addOns} </li>" +
+                    "<li>Tilbud i alt: -{tilbud}</li>" +
+                "</ul>" +
+                
+                "<p>Pris i alt: {price}</p>";
 
             //Replases text in the body to customer data.
             msg.Body = msg.Body.Replace("{startDate}", StartDate);

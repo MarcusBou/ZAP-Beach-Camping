@@ -48,7 +48,7 @@ namespace ZAP_BEACH_CAMPING
                 type = "Luksus Hytte";
             }
             else if (Sæsonplads.Checked == true){
-                type = "Sæsonplads";
+                type = "Teltplads";
             }
             else if (Campingplads.Checked == true){
                 //

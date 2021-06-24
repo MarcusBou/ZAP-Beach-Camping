@@ -132,11 +132,16 @@
     <Content Include="Order.aspx" />
     <Content Include="Pictures\BritheOgJørgen.jpg" />
     <Content Include="Pictures\Camping2.jpg" />
+    <Content Include="Pictures\Camping3.jpg" />
     <Content Include="Pictures\CampingPladsForside.jpg" />
+    <Content Include="Pictures\IconFavicon.png" />
     <Content Include="Pictures\logo.png" />
+    <Content Include="Pictures\Map.jpg" />
+    <Content Include="Pictures\MenuIcon.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\JavaScript3.js" />
+    <Content Include="Scripts\Prices.js" />
+    <Content Include="Scripts\Scripts.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />

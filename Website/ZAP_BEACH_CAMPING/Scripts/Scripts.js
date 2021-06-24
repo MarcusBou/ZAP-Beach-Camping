@@ -7,11 +7,15 @@ function EditMinDateOnEndDate() {
 
     
 }
+
+//Sets the min date value to the current day.
 function setMinDateOnStartDate() {
     var todaysDate = ConvertDateFormat(new Date());
     //Sets the min date on the start date input to the current date.
     document.getElementById("MainContent_startDate").setAttribute("min", todaysDate);
 }
+
+//Converts date format to yyyy-mm-dd.
 function ConvertDateFormat(today) {
     var day = today.getDate();
     var month = today.getMonth() + 1;
@@ -26,7 +30,9 @@ function ConvertDateFormat(today) {
     var todaysDate = year + '-' + month + '-' + day;
     return todaysDate;
 }
-function addDays(date, days) {
+
+//Add a certain amount of days to a date.
+function AddDays(date, days) {
     
     var result = new Date(date);
     result.setDate(result.getDate() + days);
@@ -34,8 +40,7 @@ function addDays(date, days) {
     return result;
 }
 
-
-
+//Displays the verticalNavbar.
 function ShowVerticalNavbar() {
     //Gets the Element with the id "verticalNavbarOption".
     var x = document.getElementById("verticalNavbarOption")
@@ -48,27 +53,28 @@ function ShowVerticalNavbar() {
     }
 }
 
+//Shows attributes determent by what type of spot is picked.
 function EditShownAttributes() {
     //Gets the spottype that is checked.
     switch (GetCheckedRadioButtonFromName('typeSelector').value) {
         
         case "Campingvognplads":
-            typeChoosingChanged();
+            TypeChoosingChanged();
             document.getElementById("bigSpotOptions").style.display = "block";
             break;
         case "Teltplads":
-            typeChoosingChanged();
+            TypeChoosingChanged();
             break;
         case "Standard Hytte":
-            typeChoosingChanged()
+            TypeChoosingChanged()
             document.getElementById("cabinOptions").style.display = "block";
             break;
         case "Luksus Hytte":
-            typeChoosingChanged();
+            TypeChoosingChanged();
             document.getElementById("cabinOptions").style.display = "block";
             break;
         case "Sæsonplads":
-            typeChoosingChanged();
+            TypeChoosingChanged();
             document.getElementById("seasonOptions").style.display = "block";
             document.getElementById('viewDiv').style.display = 'none';
             //Removes the option to change the date and time as the seasons are predetermined.
@@ -80,8 +86,8 @@ function EditShownAttributes() {
        
 }
 
-//Zeroes choosing, to spare on repetetive code
-function typeChoosingChanged() {
+//Zeroes choosing, to spare on repetetive code and unchecks every checkbox.
+function TypeChoosingChanged() {
     document.getElementById('viewDiv').style.display = 'block';
     document.getElementById("cabinOptions").style.display = "none";
     document.getElementById("bigSpotOptions").style.display = "none";
@@ -101,15 +107,19 @@ function typeChoosingChanged() {
         document.getElementById("MainContent_endDate").value = null;
     }
 }
+
+//Uncheck all checkboxes with a certain name.
 function UnCheckAllFromNam(name) {
     //Gets all of the buttons.
-    var radioButtons = document.getElementsByName("ctl00$MainContent$" + name);
+    var buttons = document.getElementsByName("ctl00$MainContent$" + name);
     //Loops through all of the buttons.
-    for (var radioButton of radioButtons) {
+    for (var button of buttons) {
         //Unchecks all buttons
-        radioButton.checked = false;
+        button.checked = false;
     }
 }
+
+//Returns the radioButton that is checked.
 function GetCheckedRadioButtonFromName(name) {
     //Gets all of the radiobuttons.
     var radioButtons = document.getElementsByName("ctl00$MainContent$" + name);
@@ -123,44 +133,15 @@ function GetCheckedRadioButtonFromName(name) {
     }
 
 }
+
 //Used when the the spot card div is pressed, then the radiobutton in that card will be checked.
 function RadioButtonClick(radioButton) {
     //Sets the specific element/radiobutton to be checked.
     document.getElementById("MainContent_" + radioButton).checked = true;
     EditShownAttributes();
 }
-//All of the prices for the diffrent options
-var adultHigh = 82;
-var adultLow = 87;
-var childHigh = 42;
-var childLow = 49;
-var dog = 30;
-var teltPladsHøj = 35;
-var teltPladsLav = 35;
-var campingpladsLilleHøj = 60;
-var campingpladsLillelav = 50;
-var campingpladsStorHøj = 80;
-var campingpladsStorlav = 65;
-var hytteLav = 350;
-var hytteHøj = 500;
-var luksusHytteLav = 600;
-var luksusHytteHøj = 850;
-var sæsonpladsForår = 4100;
-var sæsonpladsSommer = 9300;
-var sæsonpladsEfterår = 2900;
-var sæsonpladsVinter = 3500;
-var sengelinned = 30;
-var morgenkompletVoksen = 75;
-var morgenkompletBarn = 50;
-var slutrengøring = 150;
-var cykelleje = 200;
-var view = 75;
-var badelandVoksen = 30;
-var badelandBarn = 15;
-var højsæsonStart = new Date(2000, 5, 14);
-var højsæsonSlut = new Date(2000, 7, 15);
 
-
+//The main function that is used to calculate the total price.
 function CalculateTotalPrice() {
     
     var totalSpotFee = 0;
@@ -168,7 +149,7 @@ function CalculateTotalPrice() {
     var totalAddOnFee = 0;
     var totalDiscount = 0;
 
-    //The daysOnCamping is used to check if the four day discount is accomplished
+    //The daysOnCamping is used to check if the four day discount is achieved.
     var daysOnCamping = 1;
 
     //Gets the dates to be looped through.
@@ -182,20 +163,14 @@ function CalculateTotalPrice() {
     //Calculate the total add on fees.
     totalAddOnFee += CalculateAddOnFee();
 
-    //If the spotType has been selected and seasonSpot has been selected.
-    if (spotType != null && spotType.value == "Sæsonplads") {
-
-        //Calculates the spot fee for a seaonspot.
-        totalSpotFee += CalculateSeasonSpotFee();
-    }
+    
 
      //This loop is used for evrey thing that are paid on a daily basis.
     while (startDate < endDate) {
 
         //Chceks if a spotType has been selected or not and runs the function if a spotType has been selected.
-        if (spotType != null && !FourDayDiscountIsAccomplished(daysOnCamping)) {
+        if (spotType != null && !FourDayDiscountIsAchieved(daysOnCamping)) {
             totalSpotFee += CalculateSpotFee(HighOrLowSeason(startDate))
-            console.log('yoo');
         }
         //Gets the totalSpotFee per day.
         else if (spotType !=null) {
@@ -206,18 +181,32 @@ function CalculateTotalPrice() {
         daysOnCamping++;
         startDate.setDate(startDate.getDate() + 1);
     }
+
+    //If the spotType has been selected and seasonSpot has been selected.
+    if (spotType != null && spotType.value == "Sæsonplads") {
+
+        //Calculates the spot fee for a seaonspot.
+        totalSpotFee += CalculateSeasonSpotFee();
+
+        //Sets the price of personal to 0 because personal is free when seasonspot is chosen.
+        totalPersonalFee = 0;
+    }
+    //sets the price labels
     SetPriceLabels(totalSpotFee, totalPersonalFee, totalAddOnFee, totalDiscount, totalDiscount);
 }
+
+//Calculates the add on fees.
 function CalculateAddOnFee() {
     var totalAddOnFee = 0;
-    
+
+    //Gets all of the values from the add ons.
     var sengelinnedAmount = document.getElementById("MainContent_Sengelinned").value;
     var morgenkompletVoksenAmount = document.getElementById("MainContent_VoksenMorgenkomplet").value;
     var morgenkompletBarnAmount = document.getElementById("MainContent_BarnMorgenkomplet").value;
     var cykellejeAmount = document.getElementById("MainContent_Cykelleje").value;
     var badelandVoksenAmount = document.getElementById("MainContent_VoksenBadeland").value;
     var badelandBarnAmount = document.getElementById("MainContent_BadelandBarn").value;
-    var slutrengøring = document.getElementById("MainContent_cleaning").checked;
+    var slutrengøringBool = document.getElementById("MainContent_cleaning").checked;
 
     //Adds the amount and the price for each add on.
     totalAddOnFee += sengelinnedAmount * sengelinned;
@@ -226,12 +215,14 @@ function CalculateAddOnFee() {
     totalAddOnFee += cykellejeAmount * cykelleje;
     totalAddOnFee += badelandVoksenAmount * badelandVoksen;
     totalAddOnFee += badelandBarnAmount * badelandBarn;
-    if (slutrengøring) {
-        totalAddOnFee += 150;
+    if (slutrengøringBool) {
+        totalAddOnFee += slutrengøring;
     }
     //Returns the totalAddOnFee.
     return totalAddOnFee;
 }
+
+//Calculate the personale fee.
 function CalculatePersonalFee(highOrLowSeason) {
     //Gets the number of the personal inputs.
     var adultAmount = document.getElementById("MainContent_Voksne").value;
@@ -254,10 +245,12 @@ function CalculatePersonalFee(highOrLowSeason) {
     totalPersonalFee += (dog * dogAmount);
     return totalPersonalFee;
 }
-function CalculateSpotFee(highOrLowSeason) {
 
-    var viewCheckbox = document.getElementById("MainContent_Udsigt").checked;
+//Calculate the spot fee.
+function CalculateSpotFee(highOrLowSeason) {
+    //Gets the spot type that is selected in the radiobutton group.
     var spotType = GetCheckedRadioButtonFromName('typeSelector');
+
     var totalSpotFee = 0;
 
     //Checks if the specific date is in the highseason or not.
@@ -266,7 +259,7 @@ function CalculateSpotFee(highOrLowSeason) {
         //Adds total cost depeding on what type of spot is selected.
         switch (spotType.value) {
             case "Campingvognplads":
-                //If its a big spot then it costs 80 dkk daily else if its a normal spot then it costs 60 dkk daily.
+                //Campingvognplads is the only spot that has the option for a big spot.
                 if (document.getElementById('MainContent_BigSpot').checked) {
                     totalSpotFee += campingpladsStorHøj;
                 }
@@ -291,6 +284,7 @@ function CalculateSpotFee(highOrLowSeason) {
         //Adds total cost depeding on what type of spot is selected.
         switch (spotType.value) {
             case "Campingplads":
+                //Campingvognplads is the only spot that has the option for a big spot.
                 if (document.getElementById('MainContent_BigSpot').checked) {
                     totalSpotFee += campingpladsStorlav;
                 }
@@ -309,16 +303,17 @@ function CalculateSpotFee(highOrLowSeason) {
                 break;
         }
     }
-    //The spot price is the same in the low and high season, so we dont need to determen if its low or high season for it.
-
-    if (viewCheckbox) {
+    //The view is the only spot fee that is not changed when its high or low season, so we dont need to determen if its low or high season for it.
+    if (document.getElementById("MainContent_Udsigt").checked) {
         totalSpotFee += view;
     }
     return totalSpotFee;
 }
+
+//Calculate the price if a season spot is picked.
 function CalculateSeasonSpotFee() {
     var totalSpotFee = 0;
-    //Seasons spot do not need to pay a personal fee thus its set to 0.
+
     var selecetRadioButton = GetCheckedRadioButtonFromName('SeasonSpot');
     //If a button is not selected then the switch statement will not run .
     if (selecetRadioButton != null) {
@@ -340,12 +335,16 @@ function CalculateSeasonSpotFee() {
     }
     return totalSpotFee;
 }
-function FourDayDiscountIsAccomplished(daysOnCamping) {
+
+//Return true if the four day discount is achieved.
+function FourDayDiscountIsAchieved(daysOnCamping) {
     if (daysOnCamping % 4 == 0) {
         return true;
     }
     return false;
 }
+
+//Calculates the discount campaign
 function DiscountCampaign() {
     
     //If the special campaign is selected then the enddate will always be one week in the future.
@@ -354,7 +353,7 @@ function DiscountCampaign() {
         document.getElementById('MainContent_endDate').disabled = true;
         var startDate = document.getElementById('MainContent_startDate').value;
         var newDate = new Date(startDate)
-        newDate = addDays(newDate, 7);
+        newDate = AddDays(newDate, 7);
         document.getElementById('MainContent_endDate').value = ConvertDateFormat(newDate);
 
         //Sets the max persons to 4.
@@ -375,6 +374,7 @@ function DiscountCampaign() {
     
 }
 
+//Sets the the price labels.
 function SetPriceLabels(totalSpotFee, totalPersonalFee, totalAddOnFee, totalDiscount, totalDiscount) {
     //Displays all of the diferent prices on the page.
     totalPrice = totalSpotFee + totalPersonalFee + totalAddOnFee - totalDiscount;
@@ -384,18 +384,21 @@ function SetPriceLabels(totalSpotFee, totalPersonalFee, totalAddOnFee, totalDisc
     document.getElementById('MainContent_TotalDiscount').innerHTML = totalDiscount;
     document.getElementById('MainContent_TotalPrice').innerHTML = totalPrice;
 
+    //Displays the prices in hidden fields to be used in the c# code.
     document.getElementById('MainContent_TotalSpotFeeHidden').value = totalSpotFee;
     document.getElementById('MainContent_TotalPersonalFeeHidden').value = totalPersonalFee;
     document.getElementById('MainContent_TotalAddOnFeeHidden').value = totalAddOnFee;
     document.getElementById('MainContent_TotalDiscountHidden').value = totalDiscount;
     document.getElementById('MainContent_TotalPriceHidden').value = totalPrice;
 }
+
 //Checks if a date is in the high - or low season, returns true if its high season.
 function HighOrLowSeason(date) {
 
     var newDate = new Date(date);
-    newDate.setFullYear(2000);
     
+    newDate.setFullYear(2000);
+    //Checks if the new date is inside the highSeason.
     if (newDate > højsæsonStart && newDate < højsæsonSlut) {
         return true;
     }
@@ -403,6 +406,8 @@ function HighOrLowSeason(date) {
         return false;
     }
 }
+
+//Sets the start- and endDate if the seasonspot has been chosen.
 function SetDateInputOnSeasons(season) {
     //Gets todays date.
     var todaysDate = new Date();

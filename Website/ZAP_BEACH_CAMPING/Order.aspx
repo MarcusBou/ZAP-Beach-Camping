@@ -159,11 +159,11 @@
             <h4>Tilbud i alt: <asp:Label Text="0" runat="server" id="TotalDiscount"/>,00 DKK</h4>
             <h1>Pris i alt: <asp:Label Text="0" runat="server" id="TotalPrice"/>,00 DKK</h1>
         </div>
-        <asp:HiddenField runat="server" id="TotalSpotFeeHidden"/>
-        <asp:HiddenField runat="server" id="TotalPersonalFeeHidden"/>
-        <asp:HiddenField runat="server" id="TotalAddOnFeeHidden"/>
-        <asp:HiddenField runat="server" id="TotalDiscountHidden"/>
-        <asp:HiddenField runat="server" id="TotalPriceHidden" Value="2"/>
+        <asp:HiddenField runat="server" id="TotalSpotFeeHidden" Value="0"/>
+        <asp:HiddenField runat="server" id="TotalPersonalFeeHidden" Value="0"/>
+        <asp:HiddenField runat="server" id="TotalAddOnFeeHidden" Value="0"/>
+        <asp:HiddenField runat="server" id="TotalDiscountHidden" Value="0"/>
+        <asp:HiddenField runat="server" id="TotalPriceHidden" Value="0"/>
         <div class="col-md-6">
             <asp:Button  type="submit" Text="Bestil Plads" runat="server" CssClass="orderButton green hover" OnClick="OrderSpot"/>
         </div>
