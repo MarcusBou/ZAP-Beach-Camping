@@ -105,15 +105,6 @@ namespace ZAP_BEACH_CAMPING
         protected global::System.Web.UI.WebControls.RadioButton Sæsonplads;
 
         /// <summary>
-        /// typeSelector control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList typeSelector;
-
-        /// <summary>
         /// startDate control.
         /// </summary>
         /// <remarks>
@@ -283,14 +274,5 @@ namespace ZAP_BEACH_CAMPING
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label TotalPrice;
-
-        /// <summary>
-        /// CalculatePriceID control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton CalculatePriceID;
     }
 }

@@ -11,7 +11,7 @@ namespace ZAP_BEACH_CAMPING
 {
     public partial class Order : System.Web.UI.Page
     {
-        private double currPrice , addOnPrices, PeoplePrices;
+        private double currPrice, addOnPrices, PeoplePrices;
         private SQLManager sql = new SQLManager();
         private Dictionary<string, int> pricesDict = new Dictionary<string, int>();
 
@@ -34,10 +34,34 @@ namespace ZAP_BEACH_CAMPING
             string phoneNumber = Telefonnummer.Text;
             string address = Adresse.Text;
             string StartDate = startDate.Text;
-            string  EndDate = endDate.Text;
-            string type = typeSelector.SelectedValue;
+            string EndDate = endDate.Text;
+            string type = "Teltplads";
+            if (Teltplads.Checked == true){
+                type = "Teltplads";
+            }
+            else if (StandardHytte.Checked == true){
+                type = "Standard Hytte";
+            }
+            else if (LuksusHytte.Checked == true){
+                type = "Luksus Hytte";
+            }
+            else if (Sæsonplads.Checked == true){
+                type = "Sæsonplads";
+            }
+            else if (Campingplads.Checked == true){
+                if (Udsigt.Checked)
+                {
+                    type = "Campingvognplads (Stor)";
+                }
+                else
+                {
+                    type = "Campingvognplads (lille)";
+                } 
+                
+            }
+            
             int udsigt = Convert.ToInt32(Udsigt.Checked);
-            int bigSpot = Convert.ToInt32(BigSpot.Checked);
+            
             int slutrengøring = Convert.ToInt32(cleaning.Checked);
             int adult = Convert.ToInt32(Voksne.Text);
             int child = Convert.ToInt32(Børn.Text);
@@ -46,7 +70,7 @@ namespace ZAP_BEACH_CAMPING
             int voksenMorgenkomplet = Convert.ToInt32(VoksenMorgenkomplet.Text);
             int barnMorgenkomplet = Convert.ToInt32(BarnMorgenkomplet.Text);
             int cykelleje = Convert.ToInt32(Cykelleje.Text);
-            int voksenBadeland = Convert.ToInt32(VoksenBadeland.Text);  
+            int voksenBadeland = Convert.ToInt32(VoksenBadeland.Text);
             int badelandBarn = Convert.ToInt32(BadelandBarn.Text);
             BookingManager bm = new BookingManager();
             bm.BindABookingToCustomer(firstName, lastName, email, address, phoneNumber, StartDate, EndDate, type, adult, child, dog, badelandBarn, voksenBadeland, cykelleje, barnMorgenkomplet, voksenMorgenkomplet, senngelinned, slutrengøring, udsigt);

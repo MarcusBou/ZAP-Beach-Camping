@@ -35,7 +35,7 @@
                 <h5 class="card-text"> m/ strøm</h5>
                 <h6 class="card-text">Højsæson pris: 60,-</h6>
                 <h6 class="card-text">Lavsæson pris: 50,-</h6>
-                <asp:RadioButton runat="server" id="Campingplads" type="radio" name="typeSelector" GroupName="typeSelector" value="Campingplads" onclick="EditShownAttributes()"/>
+                <asp:RadioButton runat="server" id="Campingplads" type="radio" name="typeSelector" GroupName="typeSelector" value="Campingvognplads" onclick="EditShownAttributes()"/>
 
             </div>
         </div>
@@ -47,7 +47,7 @@
                 <h5 class="card-text"> m/ strøm</h5>
                 <h6 class="card-text">Højsæson pris: 35,-</h6>
                 <h6 class="card-text">Lavsæson pris: 45,-</h6>
-                <asp:RadioButton runat="server" id="Teltplads" type="radio" name="typeSelector" GroupName="typeSelector" Value="Teltplads" onclick="EditShownAttributes()"/>
+                <asp:RadioButton runat="server" id="Teltplads" type="radio" name="typeSelector1" GroupName="typeSelector" Value="Teltplads" onclick="EditShownAttributes()"/>
                 
             </div>
         </div>
@@ -88,15 +88,7 @@
         <div class="col-sm-6 col-xs-12">
             
 
-            <!--<asp:Label Text="Type" runat="server" for="typeSelector"/><br />
-            <asp:DropDownList runat="server" name="Type" ID="typeSelector" onchange="EditShownAttributes()">
-                <asp:ListItem>--</asp:ListItem>
-                <asp:ListItem value="Campingplads" >Campingplads</asp:ListItem>
-                <asp:ListItem value="Teltplads" >Teltplads</asp:ListItem>
-                <asp:ListItem value="Standard Hytte" >Standard Hytte</asp:ListItem>
-                <asp:ListItem value="Luksus Hytte">Luksus Hytte</asp:ListItem>
-                <asp:ListItem value="Sæsonplads" >Sæsonplads</asp:ListItem>
-            </asp:DropDownList><br /><br />-->
+          
             <div id="dateInputs">
                 <asp:Label Text="Ankomst Dato" runat="server" for="Ankomst"/><br />
                 <asp:TextBox runat="server" ID="startDate" type="date" name="Ankomst" min="2020-06-16" max="2070-1-1" onBlur="EditMinDateOnEndDate()" onfocus="setMinDateOnStartDate()" onInput="CalculateTotalPrice()" /><br /><br />
@@ -104,13 +96,14 @@
                 <asp:Label Text="Afgangs Dato" runat="server" for="Afgang"/><br />
                 <asp:TextBox runat="server" type="date" name="Afgang" min="1970-1-1" max="2070-1-1" id="endDate" onInput="CalculateTotalPrice()"/><br /><br />
             </div>
+            <div id="viewDiv">
                 <asp:CheckBox Text="Med Udsigt" runat="server" id="Udsigt" onInput="CalculateTotalPrice()"/><br />
-
+            </div>
                 <div ID="bigSpotOptions" class="none">
-                    <asp:CheckBox ID="BigSpot" Text="Stor Plads" runat="server" onInput="CalculateTotalPrice()" /><br />
+                    <asp:CheckBox id="BigSpot" name="BigSpot" Text="Stor Plads" runat="server" onInput="CalculateTotalPrice()" /><br />
                 </div>
                 <div id="cabinOptions" class="none">
-                    <asp:CheckBox ID="cleaning" Text="Slutrengøring" runat="server" /><br /><br />
+                    <asp:CheckBox ID="cleaning" Text="Slutrengøring" runat="server" onInput="CalculateTotalPrice()"/><br /><br />
                 </div>
                 <div id="seasonOptions" class="none">
                     <asp:RadioButton Text="Forår (1. april - 30. juni)" GroupName="SeasonSpot" name="SeasonSpot" runat="server" value="Forår" onclick="SetDateInputOnSeasons('Forår')" onInput="CalculateTotalPrice()" /><br />
@@ -164,8 +157,7 @@
             <h1>Pris i alt: <asp:Label Text="0" runat="server" id="TotalPrice"/>,00 DKK</h1>
         </div>
         <div class="col-md-6">
-            <asp:Button  Text="Bestil Plads" runat="server" CssClass="orderButton green hover" OnCientClick="OrderSpot()"/>
+            <asp:Button  type="submit" Text="Bestil Plads" runat="server" CssClass="orderButton green hover" OnClick="OrderSpot"/>
         </div>
     </section>
-    <Button Text="text" runat="server" ID="CalculatePriceID" OnClick="return CalculatePrice" autopostback="false" />
 </asp:Content>
