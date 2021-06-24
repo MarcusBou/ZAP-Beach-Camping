@@ -231,6 +231,15 @@ namespace ZAP_BEACH_CAMPING
         protected global::System.Web.UI.WebControls.TextBox BadelandBarn;
 
         /// <summary>
+        /// discountCampaigne control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox discountCampaigne;
+
+        /// <summary>
         /// TotalSpotFee control.
         /// </summary>
         /// <remarks>
@@ -274,5 +283,50 @@ namespace ZAP_BEACH_CAMPING
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label TotalPrice;
+
+        /// <summary>
+        /// TotalSpotFeeHidden control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField TotalSpotFeeHidden;
+
+        /// <summary>
+        /// TotalPersonalFeeHidden control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField TotalPersonalFeeHidden;
+
+        /// <summary>
+        /// TotalAddOnFeeHidden control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField TotalAddOnFeeHidden;
+
+        /// <summary>
+        /// TotalDiscountHidden control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField TotalDiscountHidden;
+
+        /// <summary>
+        /// TotalPriceHidden control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField TotalPriceHidden;
     }
 }

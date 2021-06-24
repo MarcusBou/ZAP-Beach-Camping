@@ -72,9 +72,14 @@ namespace ZAP_BEACH_CAMPING
             int cykelleje = Convert.ToInt32(Cykelleje.Text);
             int voksenBadeland = Convert.ToInt32(VoksenBadeland.Text);
             int badelandBarn = Convert.ToInt32(BadelandBarn.Text);
+            string totalPersonalFee = TotalPersonalFeeHidden.Value + ",00 DKK";
+            string totalSpotFee = TotalSpotFeeHidden.Value + ",00 DKK";
+            string totalAddOnFee = TotalAddOnFeeHidden.Value + ",00 DKK";
+            string totalDiscount = TotalDiscountHidden.Value + ",00 DKK";
+            string totalPrice = TotalPriceHidden.Value + ",00 DKK";
             BookingManager bm = new BookingManager();
             bm.BindABookingToCustomer(firstName, lastName, email, address, phoneNumber, StartDate, EndDate, type, adult, child, dog, badelandBarn, voksenBadeland, cykelleje, barnMorgenkomplet, voksenMorgenkomplet, senngelinned, slutrengøring, udsigt);
-
+            bm.SendReturnMail(email, StartDate, EndDate, totalPersonalFee, totalSpotFee, totalAddOnFee, totalDiscount, totalPrice);
         }
     }
 }

@@ -13,7 +13,7 @@ namespace ZAP_BeachCamping
     {
         private SQLManager SQLconn = new SQLManager();
 
-        public void SendReturnMail(int spotID, string startDate, string endDate, int persongebyr, int pladsgebyr, int tilbud, int price)
+        public void SendReturnMail(string email, string StartDate, string EndDate, string totalPersonalFee, string totalSpotFee, string totalAddOns, string totalDiscount, string totalPrice)
         {
             SmtpClient client = new SmtpClient("smtp.gmail.com");
             //Sets the pot the mail is goning to be send through.
@@ -27,7 +27,7 @@ namespace ZAP_BeachCamping
 
 
             //Determens the the account that will be sending the message and to account that will be reciving the message.
-            MailMessage msg = new MailMessage("ZAPBeachCampingDK@gmail.com", "daniel.vuust@gmail.com");
+            MailMessage msg = new MailMessage("ZAPBeachCampingDK@gmail.com", email);
             //Sets the subject of the mail.
             msg.Subject = "ZAP Beach Camping Ordreberæftelse";
             //Sets the body to be html syntax.
@@ -35,20 +35,21 @@ namespace ZAP_BeachCamping
             //Sets the body of the mail.
             msg.Body = "" +
                 "<h1>Din ordre hos ZAP Beach Camping er nu bekræftet</h1>" +
-                "<h2>Du har bestilt plads nummer {spotID} fra {startDate} til {endDate}</h2>" +
+                "<h2>Du har bestilt plads hos ZAP Beach Camping fra {startDate} til {endDate}</h2>" +
                 "<h3>Persongebyr i alt: {persongebyr} </h3> " +
                 "<h3>Pladsgebyr i alt: {pladsgebyr} </h3>" +
-                "<h3>Tilbud i alt: {tilbud}</h3>" +
+                "<h3>Tillæg i alt: {addOns} </h3>" +
+                "<h3>Tilbud i alt: -{tilbud}</h3>" +
                 "<h1>Pris i alt: {price}</h1>";
 
             //Replases text in the body to customer data.
-            msg.Body = msg.Body.Replace("{spotID}", spotID.ToString());
-            msg.Body = msg.Body.Replace("{startDate}", startDate);
-            msg.Body = msg.Body.Replace("{endDate}", endDate);
-            msg.Body = msg.Body.Replace("{persongebyr}", persongebyr.ToString());
-            msg.Body = msg.Body.Replace("{pladsgebyr}", pladsgebyr.ToString());
-            msg.Body = msg.Body.Replace("{tilbud}", tilbud.ToString());
-            msg.Body = msg.Body.Replace("{price}", price.ToString());
+            msg.Body = msg.Body.Replace("{startDate}", StartDate);
+            msg.Body = msg.Body.Replace("{endDate}", EndDate);
+            msg.Body = msg.Body.Replace("{persongebyr}", totalPersonalFee);
+            msg.Body = msg.Body.Replace("{pladsgebyr}", totalSpotFee);
+            msg.Body = msg.Body.Replace("{tilbud}", totalDiscount);
+            msg.Body = msg.Body.Replace("{addOns}", totalAddOns);
+            msg.Body = msg.Body.Replace("{price}", totalPrice);
             ;
 
             //Sends the msg using googles smtp server.

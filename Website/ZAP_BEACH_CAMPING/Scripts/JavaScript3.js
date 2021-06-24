@@ -4,6 +4,13 @@ function EditMinDateOnEndDate() {
     var startDate = document.getElementById("MainContent_startDate").value;
     //Sets the min date to the picked date in startDate.
     document.getElementById("MainContent_endDate").setAttribute("min", startDate);
+    
+    if (document.getElementById('MainContent_discountCampaigne').checked) {
+        var newDate = new Date(startDate)
+        newDate = addDays(newDate, 20);
+        console.log(ConvertDateFormat(newDate));
+        document.getElementById('MainContent_endDate').value = ConvertDateFormat(newDate);
+    }
 }
 function setMinDateOnStartDate() {
     var todaysDate = ConvertDateFormat(new Date());
@@ -11,6 +18,7 @@ function setMinDateOnStartDate() {
     document.getElementById("MainContent_startDate").setAttribute("min", todaysDate);
 }
 function ConvertDateFormat(today) {
+    console.log(today+'ayyy');
     var day = today.getDate();
     var month = today.getMonth() + 1;
     var year = today.getFullYear();
@@ -23,6 +31,13 @@ function ConvertDateFormat(today) {
     }
     var todaysDate = year + '-' + month + '-' + day;
     return todaysDate;
+}
+function addDays(date, days) {
+    
+    var result = new Date(date);
+    result.setDate(result.getDate() + days);
+    
+    return result;
 }
 
 
@@ -153,7 +168,7 @@ var højsæsonSlut = new Date(2000, 7, 15);
 
 
 function CalculateTotalPrice() {
-    
+    console.log('ayy');
     var totalSpotFee = 0;
     var totalPersonalFee = 0;
     var totalAddOnFee = 0;
@@ -185,7 +200,7 @@ function CalculateTotalPrice() {
     while (startDate < endDate) {
 
         //Chceks if a spotType has been selected or not and runs the function if a spotType has been selected.
-        if (spotType != null && !fourDayDiscountIsAccomplished(daysOnCamping)) {
+        if (spotType != null && !FourDayDiscountIsAccomplished(daysOnCamping)) {
             totalSpotFee += CalculateSpotFee(HighOrLowSeason(startDate))
         }
         //Gets the totalSpotFee per day.
@@ -197,20 +212,7 @@ function CalculateTotalPrice() {
         daysOnCamping++;
         startDate.setDate(startDate.getDate() + 1);
     }
-    
-   
-    
-
-    
-    
-    //Displays all of the diferent prices on the page.
-    totalPrice = totalSpotFee + totalPersonalFee + totalAddOnFee;
-    document.getElementById('MainContent_TotalSpotFee').innerHTML = totalSpotFee;
-    document.getElementById('MainContent_TotalPersonalFee').innerHTML = totalPersonalFee;
-    document.getElementById('MainContent_TotalAddOnFee').innerHTML = totalAddOnFee;
-    document.getElementById('MainContent_TotalDiscount').innerHTML = totalDiscount;
-    document.getElementById('MainContent_TotalPrice').innerHTML = totalPrice;
-
+    SetPriceLabels(totalSpotFee, totalPersonalFee, totalAddOnFee, totalDiscount, totalDiscount, totalPrice);
 }
 function CalculateAddOnFee() {
     var totalAddOnFee = 0;
@@ -265,9 +267,8 @@ function CalculateSpotFee(highOrLowSeason) {
     var totalSpotFee = 0;
 
     //Checks if the specific date is in the highseason or not.
-    if (highOrLowSeason) {
+    if (highOrLowSeason && spotType == null) {
 
-        
         //Adds total cost depeding on what type of spot is selected.
         switch (spotType.value) {
             case "Campingvognplads":
@@ -345,11 +346,29 @@ function CalculateSeasonSpotFee() {
     }
     return totalSpotFee;
 }
-function fourDayDiscountIsAccomplished(daysOnCamping) {
+function FourDayDiscountIsAccomplished(daysOnCamping) {
     if (daysOnCamping % 4 == 0) {
         return true;
     }
     return false;
+}
+function DiscountCampaign() {
+    document.getElementById('MainContent_endDate').disabled = false;
+}
+function SetPriceLabels(totalSpotFee, totalPersonalFee, totalAddOnFee, totalDiscount, totalDiscount, totalPrice) {
+    //Displays all of the diferent prices on the page.
+    totalPrice = totalSpotFee + totalPersonalFee + totalAddOnFee - totalDiscount;
+    document.getElementById('MainContent_TotalSpotFee').innerHTML = totalSpotFee;
+    document.getElementById('MainContent_TotalPersonalFee').innerHTML = totalPersonalFee;
+    document.getElementById('MainContent_TotalAddOnFee').innerHTML = totalAddOnFee;
+    document.getElementById('MainContent_TotalDiscount').innerHTML = totalDiscount;
+    document.getElementById('MainContent_TotalPrice').innerHTML = totalPrice;
+
+    document.getElementById('MainContent_TotalSpotFeeHidden').value = totalSpotFee;
+    document.getElementById('MainContent_TotalPersonalFeeHidden').value = totalPersonalFee;
+    document.getElementById('MainContent_TotalAddOnFeeHidden').value = totalAddOnFee;
+    document.getElementById('MainContent_TotalDiscountHidden').value = totalDiscount;
+    document.getElementById('MainContent_TotalPriceHidden').value = totalPrice;
 }
 //Checks if a date is in the high - or low season, returns true if its high season.
 function HighOrLowSeason(date) {

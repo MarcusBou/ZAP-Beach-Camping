@@ -91,7 +91,7 @@
           
             <div id="dateInputs">
                 <asp:Label Text="Ankomst Dato" runat="server" for="Ankomst"/><br />
-                <asp:TextBox runat="server" ID="startDate" type="date" name="Ankomst" min="2020-06-16" max="2070-1-1" onBlur="EditMinDateOnEndDate()" onfocus="setMinDateOnStartDate()" onInput="CalculateTotalPrice()" /><br /><br />
+                <asp:TextBox runat="server" ID="startDate" type="date" name="Ankomst" min="2020-06-16" max="2070-1-1" dateFormat="dd/mm/yyyy"  onfocus="setMinDateOnStartDate()" onInput="CalculateTotalPrice(); EditMinDateOnEndDate();" /><br /><br />
 
                 <asp:Label Text="Afgangs Dato" runat="server" for="Afgang"/><br />
                 <asp:TextBox runat="server" type="date" name="Afgang" min="1970-1-1" max="2070-1-1" id="endDate" onInput="CalculateTotalPrice()"/><br /><br />
@@ -145,17 +145,25 @@
             <asp:Label Text="Adgang til badeland (Barn)" runat="server" for="BadelandBarn"/><br />
             <asp:TextBox runat="server" type="number" name="BadelandBarn" value="0" ID="BadelandBarn" min="0" onInput="CalculateTotalPrice()"/> <br /> <br /> 
         </div>
-
+         
         
     </section>
-    <section class="row">
+    <section class="row DiscountCampaigne">
+        <asp:CheckBox Text="1 uges teltpladsinkl. 4 personer, 6x morgenmad og billetter til badeland hele ugen" runat="server" onclick="DiscountCampaign()" id="discountCampaigne" class="col-sm-12"/>
+    </section>
+    <section class="row" onload="CalculateTotalPrice()">
         <div class="col-md-6">
-            <h4>Pladsgebyr i alt: <asp:Label Text="0" runat="server" id="TotalSpotFee"/>,00 DKK</h4>
+            <h4>Pladsgebyr i alt: <asp:Label Text="0" runat="server" ID="TotalSpotFee"/>,00 DKK</h4>
             <h4>Peronsgebyr i alt: <asp:Label Text="0" runat="server" id="TotalPersonalFee"/>,00 DKK</h4>
             <h4>Tillæg i alt: <asp:Label Text="0" runat="server" id="TotalAddOnFee"/>,00 DKK</h4>
             <h4>Tilbud i alt: <asp:Label Text="0" runat="server" id="TotalDiscount"/>,00 DKK</h4>
             <h1>Pris i alt: <asp:Label Text="0" runat="server" id="TotalPrice"/>,00 DKK</h1>
         </div>
+        <asp:HiddenField runat="server" id="TotalSpotFeeHidden"/>
+        <asp:HiddenField runat="server" id="TotalPersonalFeeHidden"/>
+        <asp:HiddenField runat="server" id="TotalAddOnFeeHidden"/>
+        <asp:HiddenField runat="server" id="TotalDiscountHidden"/>
+        <asp:HiddenField runat="server" id="TotalPriceHidden" Value="2"/>
         <div class="col-md-6">
             <asp:Button  type="submit" Text="Bestil Plads" runat="server" CssClass="orderButton green hover" OnClick="OrderSpot"/>
         </div>
