@@ -17,13 +17,7 @@ namespace ZAP_BEACH_CAMPING
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            currPrice = 0;
-            addOnPrices = 0;
-            PeoplePrices = 0;
-            foreach (var item in sql.GetAllPrices())
-            {
-                pricesDict.Add(item.Key, item.Value);
-            }
+            
         }
 
         protected void OrderSpot(object sender, EventArgs e)
@@ -51,7 +45,7 @@ namespace ZAP_BEACH_CAMPING
                 type = "Teltplads";
             }
             else if (Campingplads.Checked == true){
-                //
+                
                 if (BigSpot.Checked)
                 {
                     type = "Campingvognplads (Stor)";
