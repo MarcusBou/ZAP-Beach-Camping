@@ -38,7 +38,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\</OutputPath>
+    <OutputPath>bin\test\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -126,15 +126,22 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
+    <None Include="Properties\PublishProfiles\Default Settings1.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Order.aspx" />
     <Content Include="Pictures\BritheOgJørgen.jpg" />
     <Content Include="Pictures\Camping2.jpg" />
+    <Content Include="Pictures\Camping3.jpg" />
     <Content Include="Pictures\CampingPladsForside.jpg" />
+    <Content Include="Pictures\IconFavicon.png" />
     <Content Include="Pictures\logo.png" />
+    <Content Include="Pictures\Map.jpg" />
+    <Content Include="Pictures\MenuIcon.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\JavaScript3.js" />
+    <Content Include="Scripts\Prices.js" />
+    <Content Include="Scripts\Scripts.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />

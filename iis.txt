@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile
+    publishUrl="https://ZAP-BEACH-CAMP:8172/msdeploy.axd"
+    msdeploySite="Default Web Site"
+    destinationAppUrl="http://ZAP-BEACH-CAMP:80/"
+    mySQLDBConnectionString=""
+    SQLServerDBConnectionString=""
+    profileName="Default Settings"
+    publishMethod="MSDeploy"
+    userName="ZAP-BEACH-CAMP\Administrator" />
+</publishData>
